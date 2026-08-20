@@ -60,7 +60,7 @@ footer {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 6vw;
-  min-height: 84px;
+  min-height: 88px;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
   position: sticky;
@@ -68,38 +68,15 @@ footer {
   overflow: hidden;
 }
 
-.bakkie-run {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.bakkie-run img {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 70px;
-  width: auto;
-  max-width: none;
-  transform: translate(-120%, -50%);
-  animation: bakkie-across 11s linear infinite;
-}
-
-@keyframes bakkie-across {
-  0% {
-    transform: translate(-120%, -50%);
-  }
-  100% {
-    transform: translate(100vw, -50%);
-  }
-}
-
 .brand {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  z-index: 2;
   text-decoration: none;
   color: inherit;
+  transform: translateY(-50%);
+  animation: trolley-to-bakkie 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .brand img {
@@ -109,10 +86,75 @@ footer {
   mix-blend-mode: multiply;
 }
 
+.header-bakkie {
+  position: absolute;
+  left: 54%;
+  top: 50%;
+  z-index: 1;
+  height: 72px;
+  width: auto;
+  max-width: none;
+  pointer-events: none;
+  transform: translateY(-50%);
+  animation: bakkie-depart 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes trolley-to-bakkie {
+  0%,
+  12% {
+    transform: translate(0, -50%) scale(1);
+    opacity: 1;
+  }
+  42% {
+    transform: translate(calc(54vw - 7vw - 70px), -50%) scale(1);
+    opacity: 1;
+  }
+  52% {
+    transform: translate(calc(54vw - 7vw + 28px), -62%) scale(0.32);
+    opacity: 0;
+  }
+  53%,
+  84% {
+    transform: translate(0, -50%) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bakkie-depart {
+  0%,
+  52% {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+  82% {
+    transform: translate(70vw, -50%);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(92vw, -50%);
+    opacity: 0;
+  }
+  91%,
+  94% {
+    transform: translate(0, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .bakkie-run img {
+  .brand,
+  .header-bakkie {
     animation: none;
-    transform: translate(12vw, -50%);
+    transform: translateY(-50%);
+    opacity: 1;
   }
 }
 
