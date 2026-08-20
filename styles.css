@@ -83,17 +83,18 @@ footer {
   position: absolute;
   left: 0;
   bottom: 1px;
-  height: 50px;
-  width: 32px;
+  height: 52px;
+  width: 36px;
   animation: header-walk 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .stride {
-  transform-origin: 14px 30px;
-  animation: header-stride 0.42s ease-in-out infinite;
+  transform-origin: 15px 36px;
+  animation: header-stride 0.7s ease-in-out infinite;
 }
 
 .stride.b {
+  transform-origin: 21px 36px;
   animation-direction: reverse;
 }
 
@@ -115,17 +116,17 @@ footer {
   position: absolute;
   right: 2px;
   bottom: 1px;
-  width: 96px;
-  height: 40px;
+  width: 102px;
+  height: 42px;
   animation: header-truck 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes header-stride {
   from {
-    transform: rotate(16deg);
+    transform: rotate(8deg);
   }
   to {
-    transform: rotate(-16deg);
+    transform: rotate(-8deg);
   }
 }
 
