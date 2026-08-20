@@ -318,7 +318,7 @@ h2 {
   font-weight: 600;
 }
 
-.people a:hover,
+.people a:hover:not(.btn),
 .address a:hover {
   color: var(--red);
 }
@@ -327,6 +327,11 @@ h2 {
   margin-top: 0.7rem;
   justify-self: start;
   color: #fff;
+}
+
+.people .btn:hover {
+  color: #fff;
+  background: #c10500;
 }
 
 .address {
