@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 88" role="img" aria-label="FED">
+  <g fill="none" stroke="#e10600" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M8 18 V46"/>
+    <path d="M8 18 H22"/>
+    <path d="M22 14 H108 a8 8 0 0 1 8 8 V58 H22 V14 Z"/>
+    <path d="M52 14 V58"/>
+    <path d="M82 14 V58"/>
+    <path d="M18 58 H112"/>
+    <circle cx="40" cy="74" r="8"/>
+    <circle cx="92" cy="74" r="8"/>
+  </g>
+  <g fill="#e10600" font-family="Arial Black, Arial, sans-serif" font-size="22" font-weight="800" text-anchor="middle">
+    <text x="37" y="46">F</text>
+    <text x="67" y="46">E</text>
+    <text x="97" y="46">D</text>
+  </g>
+</svg>
