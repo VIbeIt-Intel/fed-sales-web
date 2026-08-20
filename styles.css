@@ -221,6 +221,47 @@ h2 {
   width: min(100%, 430px);
   height: auto;
   mix-blend-mode: multiply;
+  transform-origin: 42% 78%;
+  animation: trolley-go 11s cubic-bezier(0.22, 1, 0.36, 1) 0.7s infinite;
+}
+
+@keyframes trolley-go {
+  0%,
+  12% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  28% {
+    transform: rotate(-360deg) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  34% {
+    transform: rotate(-368deg) translate(4%, -10%) scale(1.06);
+    opacity: 1;
+  }
+  52% {
+    transform: rotate(-18deg) translate(110%, -70%) scale(0.55);
+    opacity: 0;
+  }
+  53%,
+  62% {
+    transform: rotate(8deg) translate(-18%, 12%) scale(0.9);
+    opacity: 0;
+  }
+  82% {
+    transform: rotate(-3deg) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark img {
+    animation: none;
+  }
 }
 
 .fed-split {
@@ -402,6 +443,7 @@ footer {
 
   .hero-mark img {
     width: min(70vw, 320px);
+    animation: none;
   }
 
   .fed-split article + article {
