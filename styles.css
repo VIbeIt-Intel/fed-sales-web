@@ -40,6 +40,11 @@ body::before {
 main,
 footer {
   position: relative;
+}
+
+.dev-bar,
+main,
+footer {
   z-index: 1;
 }
 
@@ -63,7 +68,8 @@ footer {
   min-height: 88px;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
-  overflow: hidden;
+  overflow: visible;
+  z-index: 20;
 }
 
 .load-lane {
@@ -72,7 +78,9 @@ footer {
   right: 6vw;
   top: 0;
   bottom: 0;
+  overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 }
 
 .brand {
@@ -220,6 +228,14 @@ footer {
 
 #nav-toggle {
   position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
   opacity: 0;
   pointer-events: none;
 }
@@ -230,14 +246,29 @@ footer {
   font-weight: 700;
   color: var(--red);
   position: relative;
-  z-index: 4;
+  z-index: 5;
+  pointer-events: auto;
+  min-height: 44px;
+  min-width: 44px;
+  margin: 0;
+  padding: 0 0.4rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.nav-btn .nav-close {
+  display: none;
 }
 
 nav {
   display: flex;
   gap: 1.35rem;
   position: relative;
-  z-index: 3;
+  z-index: 4;
   flex-shrink: 0;
 }
 
@@ -868,6 +899,14 @@ footer {
     display: inline-flex;
   }
 
+  #nav-toggle:checked ~ .nav-btn .nav-open {
+    display: none;
+  }
+
+  #nav-toggle:checked ~ .nav-btn .nav-close {
+    display: inline;
+  }
+
   .load-lane {
     left: 1rem;
     right: 5.5rem;
@@ -893,9 +932,16 @@ footer {
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 0.8rem 1rem;
+    padding: 0.45rem 0.85rem;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0;
+    z-index: 6;
+  }
+
+  nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   #nav-toggle:checked ~ nav {
