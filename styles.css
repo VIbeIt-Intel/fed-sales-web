@@ -57,6 +57,7 @@ footer {
 .top {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.1rem;
   padding: 0.85rem 6vw;
   min-height: 88px;
@@ -68,10 +69,12 @@ footer {
 }
 
 .load-lane {
-  position: relative;
-  flex: 0 0 268px;
-  width: 268px;
-  height: 72px;
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
 }
 
 .brand {
@@ -79,6 +82,7 @@ footer {
   left: 0;
   top: 50%;
   z-index: 2;
+  pointer-events: auto;
   text-decoration: none;
   color: inherit;
   transform: translateY(-50%);
@@ -94,14 +98,14 @@ footer {
 
 .header-bakkie {
   position: absolute;
-  left: 138px;
+  left: 50%;
   top: 50%;
   z-index: 1;
   height: 72px;
   width: auto;
   max-width: none;
   pointer-events: none;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   animation: bakkie-meet 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
@@ -113,13 +117,13 @@ footer {
     opacity: 1;
   }
   42% {
-    left: 38px;
+    left: 25%;
     transform: translateY(-50%) scale(1);
     opacity: 1;
   }
   52% {
-    left: 112px;
-    transform: translateY(-62%) scale(0.32);
+    left: 28%;
+    transform: translate(-10%, -62%) scale(0.32);
     opacity: 0;
   }
   53%,
@@ -138,44 +142,49 @@ footer {
 @keyframes bakkie-meet {
   0%,
   12% {
-    left: 138px;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
   42%,
   52% {
-    left: 102px;
-    transform: translateY(-50%);
+    left: 28%;
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
   82% {
-    left: 102px;
-    transform: translate(70vw, -50%);
+    left: 28%;
+    transform: translate(55vw, -50%);
     opacity: 1;
   }
   90% {
-    left: 102px;
-    transform: translate(95vw, -50%);
+    left: 28%;
+    transform: translate(80vw, -50%);
     opacity: 0;
   }
   91%,
   94% {
-    left: 138px;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
   }
   100% {
-    left: 138px;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand,
-  .header-bakkie {
+  .brand {
     animation: none;
     transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  .header-bakkie {
+    animation: none;
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
@@ -192,14 +201,14 @@ footer {
   font-weight: 700;
   color: var(--red);
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 
 nav {
   display: flex;
   gap: 1.35rem;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   flex-shrink: 0;
 }
 
@@ -684,6 +693,14 @@ footer {
 @media (max-width: 900px) {
   .nav-btn {
     display: inline-flex;
+  }
+
+  .load-lane {
+    right: 5.5rem;
+  }
+
+  .header-bakkie {
+    height: 56px;
   }
 
   nav {
