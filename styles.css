@@ -69,8 +69,8 @@ footer {
 
 .load-lane {
   position: relative;
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 268px;
+  width: 268px;
   height: 72px;
 }
 
@@ -94,7 +94,7 @@ footer {
 
 .header-bakkie {
   position: absolute;
-  left: calc(100% - 130px);
+  left: 138px;
   top: 50%;
   z-index: 1;
   height: 72px;
@@ -113,12 +113,12 @@ footer {
     opacity: 1;
   }
   42% {
-    left: calc(50% - 70px);
+    left: 38px;
     transform: translateY(-50%) scale(1);
     opacity: 1;
   }
   52% {
-    left: calc(50% + 18px);
+    left: 112px;
     transform: translateY(-62%) scale(0.32);
     opacity: 0;
   }
@@ -138,34 +138,34 @@ footer {
 @keyframes bakkie-meet {
   0%,
   12% {
-    left: calc(100% - 130px);
+    left: 138px;
     transform: translateY(-50%);
     opacity: 1;
   }
   42%,
   52% {
-    left: 50%;
+    left: 102px;
     transform: translateY(-50%);
     opacity: 1;
   }
   82% {
-    left: 105%;
-    transform: translateY(-50%);
+    left: 102px;
+    transform: translate(70vw, -50%);
     opacity: 1;
   }
   90% {
-    left: 120%;
-    transform: translateY(-50%);
+    left: 102px;
+    transform: translate(95vw, -50%);
     opacity: 0;
   }
   91%,
   94% {
-    left: calc(100% - 130px);
+    left: 138px;
     transform: translateY(-50%);
     opacity: 0;
   }
   100% {
-    left: calc(100% - 130px);
+    left: 138px;
     transform: translateY(-50%);
     opacity: 1;
   }
