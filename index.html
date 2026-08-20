@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
     <title>FED — Fast Easy Direct | FED General Dealer</title>
     <meta
       name="description"
@@ -15,9 +17,18 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=products2" />
+    <script>
+      history.scrollRestoration = "manual";
+      if (location.hash) {
+        history.replaceState(null, "", location.pathname);
+      }
+    </script>
   </head>
   <body>
+    <script>
+      window.scrollTo(0, 0);
+    </script>
     <p class="dev-bar">Developer preview — not live</p>
 
     <header class="top">
