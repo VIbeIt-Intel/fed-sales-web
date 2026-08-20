@@ -934,6 +934,7 @@ footer {
   font-size: 1.55rem;
   max-width: none;
   margin-bottom: 0.7rem;
+  padding-left: calc(4px + 0.85rem);
 }
 
 .catalog-scroll {
@@ -942,13 +943,14 @@ footer {
   background: #fff;
   border: 1px solid var(--line);
   border-left: 4px solid var(--red);
+  width: 100%;
 }
 
 .catalog-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.95rem;
-  min-width: 28rem;
 }
 
 .catalog-table th,
@@ -957,6 +959,7 @@ footer {
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: break-word;
 }
 
 .catalog-table th {
@@ -972,17 +975,36 @@ footer {
   border-bottom: none;
 }
 
-.catalog-table th:first-child,
-.catalog-table td:first-child {
-  position: sticky;
-  left: 0;
+.catalog-table th:nth-child(1),
+.catalog-table td:nth-child(1) {
+  width: auto;
   background: #fff;
-  min-width: 12rem;
-  box-shadow: 8px 0 8px -8px rgb(0 0 0 / 12%);
 }
 
-.catalog-table th:first-child {
+.catalog-table th:nth-child(1) {
   background: #fafafa;
+}
+
+.catalog-table th:nth-child(2),
+.catalog-table td:nth-child(2) {
+  width: 32%;
+}
+
+.catalog-table th:nth-child(n + 3),
+.catalog-table td:nth-child(n + 3) {
+  width: 8rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.catalog-table:has(th:nth-child(4)) th:nth-child(2),
+.catalog-table:has(th:nth-child(4)) td:nth-child(2) {
+  width: 28%;
+}
+
+.catalog-table:has(th:nth-child(4)) th:nth-child(n + 3),
+.catalog-table:has(th:nth-child(4)) td:nth-child(n + 3) {
+  width: 7.5rem;
 }
 
 .catalog-table .code {
@@ -996,7 +1018,6 @@ footer {
 
 .catalog-table .pack {
   color: var(--muted);
-  white-space: nowrap;
 }
 
 .catalog-table .price {
@@ -1054,7 +1075,19 @@ footer {
 
 @media (max-width: 900px) {
   .catalog-table {
-    min-width: 32rem;
+    min-width: 36rem;
     font-size: 0.9rem;
+  }
+
+  .catalog-table:has(th:nth-child(4)) {
+    min-width: 42rem;
+  }
+
+  .catalog-table th:nth-child(1),
+  .catalog-table td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 8px 0 8px -8px rgb(0 0 0 / 12%);
   }
 }
