@@ -114,29 +114,16 @@ footer {
   12% {
     left: 0;
     transform: translateY(-50%);
-    opacity: 1;
   }
   36%,
   58% {
     left: calc(50% - 141px);
     transform: translateY(-50%);
-    opacity: 1;
   }
-  72% {
-    left: calc(50% - 141px);
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  73%,
-  82% {
-    left: 0;
-    transform: translateY(-50%);
-    opacity: 0;
-  }
+  82%,
   100% {
     left: 0;
     transform: translateY(-50%);
-    opacity: 1;
   }
 }
 
@@ -175,29 +162,16 @@ footer {
   12% {
     left: 0;
     transform: translateY(-50%);
-    opacity: 1;
   }
   36%,
   58% {
     left: max(0px, calc(68% - 123px));
     transform: translateY(-50%);
-    opacity: 1;
   }
-  72% {
-    left: max(0px, calc(68% - 123px));
-    transform: translateY(-50%);
-    opacity: 0;
-  }
-  73%,
-  82% {
-    left: 0;
-    transform: translateY(-50%);
-    opacity: 0;
-  }
+  82%,
   100% {
     left: 0;
     transform: translateY(-50%);
-    opacity: 1;
   }
 }
 
