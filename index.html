@@ -17,17 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=header17" />
+    <link rel="stylesheet" href="styles.css?v=catalog1" />
     <script>
       history.scrollRestoration = "manual";
-      if (location.hash) {
-        history.replaceState(null, "", location.pathname);
-      }
     </script>
   </head>
   <body>
     <script>
-      window.scrollTo(0, 0);
+      if (!location.hash) window.scrollTo(0, 0);
     </script>
     <p class="dev-bar">Developer preview — not live</p>
 
@@ -123,142 +120,180 @@
         <p class="eyebrow">Products</p>
         <h2>What we supply.</h2>
         <p class="section-lead">
-          Example products from each category. Brand lists and pack sizes follow
-          from the current price file.
+          Open a category for indicative prices, or to ask Jean-dré or Carlo for
+          the current list. There is no online checkout — place the order with them.
         </p>
         <ul class="product-list">
           <li>
-            <img src="assets/products/product-poultry.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Chicken &amp; Crumbed Chicken</strong>
-              <small>IQF portions and Chicktizer crumbed range</small>
-            </span>
+            <a href="products/chicken.html">
+              <img src="assets/products/product-poultry.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Chicken &amp; Crumbed Chicken</strong>
+                <small>IQF portions and Chicktizer crumbed range</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-meat.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Processed Meats, Beef &amp; Eggs</strong>
-              <small>Bacon, wors, mince, and eggs</small>
-            </span>
+            <a href="products/meats.html">
+              <img src="assets/products/product-meat.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Processed Meats, Beef &amp; Eggs</strong>
+                <small>Bacon, wors, mince, and eggs</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-frozen-chips.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Chips, Frozen Veg &amp; Sauces</strong>
-              <small>McCain chips, Natures Choice, NTJ</small>
-            </span>
+            <a href="products/frozen.html">
+              <img src="assets/products/product-frozen-chips.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Chips, Frozen Veg &amp; Sauces</strong>
+                <small>McCain chips, Natures Choice, NTJ</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-syrups.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Da Vinci Syrups</strong>
-              <small>Gourmet syrups, sauces, and powders</small>
-            </span>
+            <a href="products/davinci.html">
+              <img src="assets/products/product-syrups.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Da Vinci Syrups</strong>
+                <small>Gourmet syrups, sauces, and powders</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-organics.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Origin Organics</strong>
-              <small>Moringa bars, porridge, and drinks</small>
-            </span>
+            <a href="products/organics.html">
+              <img src="assets/products/product-organics.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Origin Organics</strong>
+                <small>Moringa bars, porridge, and drinks</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-labels.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Linerless Labels</strong>
-              <small>57 mm scale and Teraoka rolls</small>
-            </span>
+            <a href="products/labels.html">
+              <img src="assets/products/product-labels.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Linerless Labels</strong>
+                <small>57 mm scale and Teraoka rolls</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-paper.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Till Rolls &amp; Paper</strong>
-              <small>Speedpoint, thermal till, A4</small>
-            </span>
+            <a href="products/paper.html">
+              <img src="assets/products/product-paper.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Till Rolls &amp; Paper</strong>
+                <small>Speedpoint, thermal till, A4</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-office.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Stationery</strong>
-              <small>Bic, Artline, and desk kit</small>
-            </span>
+            <a href="products/stationery.html">
+              <img src="assets/products/product-office.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Stationery</strong>
+                <small>Bic, Artline, and desk kit</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-adblue.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>AdBlue</strong>
-              <small>Diesel exhaust fluid for the yard</small>
-            </span>
+            <a href="products/adblue.html">
+              <img src="assets/products/product-adblue.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>AdBlue</strong>
+                <small>Diesel exhaust fluid for the yard</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-water.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Branded Water</strong>
-              <small>Cases for the floor</small>
-            </span>
+            <a href="products/water.html">
+              <img src="assets/products/product-water.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Branded Water</strong>
+                <small>Cases for the floor</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-condoms.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Condoms</strong>
-              <small>Personal care line</small>
-            </span>
+            <a href="products/condoms.html">
+              <img src="assets/products/product-condoms.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Condoms</strong>
+                <small>Personal care line</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-dairy.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Dairy</strong>
-              <small>Milk and fridge lines</small>
-            </span>
+            <a href="products/dairy.html">
+              <img src="assets/products/product-dairy.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Dairy</strong>
+                <small>Milk and fridge lines</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-dispensary.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Dispensary</strong>
-              <small>Pharmacy counter packs</small>
-            </span>
+            <a href="products/dispensary.html">
+              <img src="assets/products/product-dispensary.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Dispensary</strong>
+                <small>Pharmacy counter packs</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-groceries.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Groceries</strong>
-              <small>Everyday dry goods</small>
-            </span>
+            <a href="products/groceries.html">
+              <img src="assets/products/product-groceries.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Groceries</strong>
+                <small>Everyday dry goods</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-nuts.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Mesarris Nuts &amp; Chips</strong>
-              <small>Snack line</small>
-            </span>
+            <a href="products/nuts.html">
+              <img src="assets/products/product-nuts.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Mesarris Nuts &amp; Chips</strong>
+                <small>Snack line</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-personal-care.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Personal Care</strong>
-              <small>Toiletries for the shelf</small>
-            </span>
+            <a href="products/personal-care.html">
+              <img src="assets/products/product-personal-care.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Personal Care</strong>
+                <small>Toiletries for the shelf</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-ppe.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>PPE Gear</strong>
-              <small>Site and workplace kit</small>
-            </span>
+            <a href="products/ppe.html">
+              <img src="assets/products/product-ppe.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>PPE Gear</strong>
+                <small>Site and workplace kit</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-spices.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Spices</strong>
-              <small>Kitchen and counter spices</small>
-            </span>
+            <a href="products/spices.html">
+              <img src="assets/products/product-spices.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Spices</strong>
+                <small>Kitchen and counter spices</small>
+              </span>
+            </a>
           </li>
           <li>
-            <img src="assets/products/product-vapes.jpg?v=products1" alt="" width="64" height="64" />
-            <span class="copy">
-              <strong>Vapes</strong>
-              <small>Vape hardware and liquid</small>
-            </span>
+            <a href="products/vapes.html">
+              <img src="assets/products/product-vapes.jpg?v=products1" alt="" width="64" height="64" />
+              <span class="copy">
+                <strong>Vapes</strong>
+                <small>Vape hardware and liquid</small>
+              </span>
+            </a>
           </li>
         </ul>
       </section>

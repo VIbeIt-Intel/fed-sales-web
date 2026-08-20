@@ -659,6 +659,12 @@ h2 {
 }
 
 .product-list li {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.product-list a {
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -666,6 +672,19 @@ h2 {
   border: 1px solid var(--line);
   border-left: 4px solid var(--red);
   padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+  min-height: 76px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-list a:hover {
+  border-color: #f0c4c2;
+  background: #fffaf9;
+}
+
+.product-list a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
 }
 
 .product-list img {
@@ -832,5 +851,210 @@ footer {
 
   footer {
     display: grid;
+  }
+}
+
+.catalog {
+  background: var(--mist);
+  padding-bottom: 2rem;
+}
+
+.catalog-wrap {
+  padding: 2.2rem 6vw 1rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-bottom: 1.4rem;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--red);
+}
+
+.catalog-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.catalog-head img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+
+.catalog-head h1 {
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  max-width: 18ch;
+  margin-bottom: 0.35rem;
+}
+
+.catalog-head .lead {
+  margin-bottom: 0;
+}
+
+.catalog-note {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 0.9rem 1.1rem;
+  margin: 1.3rem 0 0.4rem;
+  max-width: 46rem;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.catalog-note strong {
+  font-weight: 700;
+}
+
+.catalog-stamp {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.7rem 0 1.6rem;
+}
+
+.catalog-group {
+  margin: 0 6vw 1.6rem;
+}
+
+.catalog-group h2 {
+  font-size: 1.55rem;
+  max-width: none;
+  margin-bottom: 0.7rem;
+}
+
+.catalog-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 28rem;
+}
+
+.catalog-table th,
+.catalog-table td {
+  padding: 0.62rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-table th {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  background: #fafafa;
+}
+
+.catalog-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.catalog-table th:first-child,
+.catalog-table td:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  min-width: 12rem;
+  box-shadow: 8px 0 8px -8px rgb(0 0 0 / 12%);
+}
+
+.catalog-table th:first-child {
+  background: #fafafa;
+}
+
+.catalog-table .code {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-top: 0.12rem;
+}
+
+.catalog-table .pack {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.catalog-table .price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.catalog-table .rsp {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.catalog-empty {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 1.2rem 1.2rem 1.3rem;
+  max-width: 40rem;
+}
+
+.catalog-empty p {
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.catalog-empty .catalog-note {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+}
+
+.catalog .people {
+  margin-top: 0.4rem;
+}
+
+.catalog .people article {
+  background: #fff;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.55rem;
+}
+
+.btn-row .btn,
+.btn-row .btn-ghost {
+  min-height: 42px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .catalog-table {
+    min-width: 32rem;
+    font-size: 0.9rem;
   }
 }
