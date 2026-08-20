@@ -160,6 +160,57 @@ footer {
   }
 }
 
+@keyframes trolley-approach-mobile {
+  0%,
+  12% {
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  38%,
+  72% {
+    left: 12px;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  88%,
+  100% {
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes bakkie-meet-mobile {
+  0%,
+  48% {
+    left: 68%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  78% {
+    left: 68%;
+    transform: translate(55vw, -50%);
+    opacity: 1;
+  }
+  86% {
+    left: 68%;
+    transform: translate(80vw, -50%);
+    opacity: 0;
+  }
+  87%,
+  94% {
+    left: 68%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    left: 68%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .brand {
     animation: none;
@@ -681,11 +732,19 @@ footer {
   }
 
   .load-lane {
+    left: 1rem;
     right: 5.5rem;
   }
 
+  .brand {
+    left: 0;
+    animation-name: trolley-approach-mobile;
+  }
+
   .header-bakkie {
-    height: 56px;
+    height: 52px;
+    left: 68%;
+    animation-name: bakkie-meet-mobile;
   }
 
   nav {
@@ -728,6 +787,12 @@ footer {
   .hero-mark {
     justify-content: flex-end;
     opacity: 0.14;
+  }
+
+  .trolley-rig,
+  .tyre {
+    animation: none;
+    transform: none;
   }
 
   .skid,
