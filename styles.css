@@ -314,29 +314,31 @@ nav a:hover {
   padding-right: 1.5rem;
 }
 
-.hero-lockup {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem 1rem;
-  margin-bottom: 1.15rem;
-  max-width: 22rem;
+.hero-brand {
+  margin: 0 0 1.05rem;
+  color: var(--red);
 }
 
-.hero-lockup img {
+.hero-brand-name,
+.hero-brand-legal {
   display: block;
-  height: 68px;
-  width: auto;
-  flex-shrink: 0;
-  mix-blend-mode: multiply;
-}
-
-.hero-lockup p {
   font-family: "Barlow Condensed", Barlow, sans-serif;
   font-weight: 800;
-  font-size: clamp(1.42rem, 1.4vw + 1.1rem, 1.78rem);
-  line-height: 0.98;
-  letter-spacing: 0.02em;
-  color: var(--red);
+  text-transform: uppercase;
+}
+
+.hero-brand-name {
+  font-size: clamp(1.7rem, 2.4vw + 0.85rem, 2.55rem);
+  line-height: 0.88;
+  letter-spacing: 0.045em;
+}
+
+.hero-brand-legal {
+  margin-top: 0.28rem;
+  font-size: clamp(0.92rem, 0.35vw + 0.82rem, 1.12rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
 }
 
 .hero::after {
@@ -384,16 +386,25 @@ h1 {
 
 .hero h1 {
   color: var(--ink);
-  max-width: 12ch;
+  max-width: none;
   margin-bottom: 0;
+  font-size: clamp(4.15rem, 8.6vw, 7.2rem);
+  line-height: 0.84;
+  letter-spacing: -0.018em;
+  text-transform: uppercase;
+}
+
+.hero h1 span,
+.hero h1 em {
+  display: block;
 }
 
 .hero h1 em {
-  display: block;
   font-style: italic;
-  font-family: Barlow, sans-serif;
-  font-weight: 500;
+  font-family: "Barlow Condensed", Barlow, sans-serif;
+  font-weight: 800;
   color: var(--red);
+  letter-spacing: 0.055em;
 }
 
 .hero h1::after {
@@ -472,11 +483,12 @@ h2 {
   width: min(100%, 460px);
   height: auto;
   transform: translateY(-50%);
-  opacity: 0.08;
+  opacity: 0.05;
   mix-blend-mode: multiply;
 }
 
 .trolley {
+  display: none;
   position: relative;
   width: min(100%, 460px);
 }
@@ -984,21 +996,16 @@ footer {
   }
 
   .hero-watermark {
-    opacity: 0.055;
+    opacity: 0.04;
     width: min(82%, 360px);
   }
 
-  .hero-lockup {
-    max-width: 18rem;
-    margin-bottom: 1rem;
+  .hero-brand {
+    margin-bottom: 0.9rem;
   }
 
-  .hero-lockup img {
-    height: 52px;
-  }
-
-  .hero-lockup p {
-    font-size: 1.32rem;
+  .hero-brand-name {
+    font-size: clamp(1.55rem, 6.4vw, 2.05rem);
   }
 
   .trolley {
@@ -1017,7 +1024,8 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(2.7rem, 14vw, 4.2rem);
+    font-size: clamp(3.55rem, 19vw, 5.4rem);
+    line-height: 0.82;
   }
 
   footer {
