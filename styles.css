@@ -476,19 +476,8 @@ h2 {
   z-index: 0;
 }
 
-.hero-watermark {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: min(100%, 460px);
-  height: auto;
-  transform: translateY(-50%);
-  opacity: 0.05;
-  mix-blend-mode: multiply;
-}
-
 .trolley {
-  display: none;
+  display: block;
   position: relative;
   width: min(100%, 460px);
 }
@@ -980,24 +969,19 @@ footer {
     bottom: 14%;
   }
 
-  .hero-copy,
-  .hero-mark {
+  .hero-copy {
     grid-column: 1;
     grid-row: 1;
-  }
-
-  .hero-copy {
     padding-right: 0;
   }
 
   .hero-mark {
+    grid-column: 1;
+    grid-row: 2;
     justify-content: flex-end;
-    opacity: 1;
-  }
-
-  .hero-watermark {
-    opacity: 0.04;
-    width: min(82%, 360px);
+    align-items: flex-end;
+    padding-top: 1.1rem;
+    z-index: 1;
   }
 
   .hero-brand {
@@ -1009,18 +993,7 @@ footer {
   }
 
   .trolley {
-    display: none;
-  }
-
-  .trolley-rig,
-  .tyre {
-    animation: none;
-    transform: none;
-  }
-
-  .skid,
-  .smoke {
-    display: none;
+    width: min(72%, 280px);
   }
 
   .hero h1 {
