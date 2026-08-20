@@ -74,60 +74,41 @@ footer {
 .brand-scene {
   position: relative;
   display: block;
-  width: 238px;
-  height: 56px;
+  width: 300px;
+  height: 58px;
   overflow: hidden;
 }
 
 .walker {
   position: absolute;
   left: 0;
-  bottom: 1px;
-  height: 52px;
-  width: 36px;
+  bottom: 0;
+  height: 54px;
+  width: auto;
   animation: header-walk 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.stride {
-  transform-origin: 15px 36px;
-  animation: header-stride 0.7s ease-in-out infinite;
-}
-
-.stride.b {
-  transform-origin: 21px 36px;
-  animation-direction: reverse;
 }
 
 .brand-cart {
   position: absolute;
-  left: 24px;
-  bottom: 3px;
+  left: 34px;
+  bottom: 2px;
   animation: header-cart 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .brand-cart img {
   display: block;
-  height: 40px;
+  height: 36px;
   width: auto;
   mix-blend-mode: multiply;
 }
 
 .brand-truck {
   position: absolute;
-  right: 2px;
-  bottom: 1px;
-  width: 102px;
-  height: 42px;
+  right: 0;
+  bottom: 0;
+  width: 118px;
+  height: auto;
   animation: header-truck 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes header-stride {
-  from {
-    transform: rotate(8deg);
-  }
-  to {
-    transform: rotate(-8deg);
-  }
 }
 
 @keyframes header-walk {
@@ -137,15 +118,15 @@ footer {
     opacity: 1;
   }
   36% {
-    transform: translateX(72px);
+    transform: translateX(86px);
     opacity: 1;
   }
   48% {
-    transform: translateX(72px);
+    transform: translateX(86px);
     opacity: 1;
   }
   54% {
-    transform: translateX(64px);
+    transform: translateX(78px);
     opacity: 1;
   }
   68% {
@@ -170,11 +151,11 @@ footer {
     opacity: 1;
   }
   36% {
-    transform: translate(72px, 0) scale(1);
+    transform: translate(86px, 0) scale(1);
     opacity: 1;
   }
   50% {
-    transform: translate(118px, -11px) scale(0.45);
+    transform: translate(138px, -8px) scale(0.4);
     opacity: 0;
   }
   51%,
@@ -211,8 +192,7 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   .walker,
-  .brand-truck,
-  .stride {
+  .brand-truck {
     display: none;
     animation: none;
   }
