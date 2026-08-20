@@ -216,50 +216,174 @@ h2 {
   pointer-events: none;
 }
 
-.hero-mark img {
-  display: block;
+.trolley {
+  position: relative;
   width: min(100%, 430px);
-  height: auto;
-  mix-blend-mode: multiply;
-  transform-origin: 42% 78%;
-  animation: trolley-go 11s cubic-bezier(0.22, 1, 0.36, 1) 0.7s infinite;
 }
 
-@keyframes trolley-go {
+.trolley img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  transform-origin: 22% 92%;
+  animation: trolley-burnout 10s ease-in 0.8s infinite;
+}
+
+.skid {
+  position: absolute;
+  left: 8%;
+  bottom: 7%;
+  height: 7px;
+  width: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgb(20 20 20 / 0%), rgb(28 28 28 / 55%), rgb(18 18 18 / 80%));
+  transform: rotate(-3deg);
+  transform-origin: right center;
+  animation: skid-mark 10s ease-in 0.8s infinite;
+}
+
+.smoke {
+  position: absolute;
+  left: 18%;
+  bottom: 8%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgb(90 90 90 / 38%);
+  filter: blur(7px);
+  opacity: 0;
+  animation: tire-smoke 10s ease-out 0.8s infinite;
+}
+
+.smoke.s2 {
+  left: 26%;
+  animation-delay: 0.95s;
+  width: 30px;
+  height: 30px;
+}
+
+.smoke.s3 {
+  left: 14%;
+  animation-delay: 1.1s;
+  width: 36px;
+  height: 36px;
+}
+
+.smoke.s4 {
+  left: 22%;
+  animation-delay: 1.25s;
+  width: 26px;
+  height: 26px;
+}
+
+@keyframes trolley-burnout {
   0%,
-  12% {
+  10% {
     transform: rotate(0deg) translate(0, 0) scale(1);
+    filter: none;
     opacity: 1;
   }
-  28% {
-    transform: rotate(-360deg) translate(0, 0) scale(1);
-    opacity: 1;
+  14% {
+    transform: rotate(-6deg) translate(-1%, 1%) scale(1);
+  }
+  16% {
+    transform: rotate(-9deg) translate(1%, 2%) scale(1.02);
+  }
+  18% {
+    transform: rotate(-5deg) translate(-1%, 1%) scale(1);
+  }
+  22% {
+    transform: rotate(-11deg) translate(1%, 2%) scale(1.03);
+  }
+  26% {
+    transform: rotate(-7deg) translate(-2%, 2%) scale(1.01);
+  }
+  30% {
+    transform: rotate(-10deg) translate(0, 2%) scale(1.04);
   }
   34% {
-    transform: rotate(-368deg) translate(4%, -10%) scale(1.06);
+    transform: rotate(-4deg) translate(8%, 1%) scale(1.02);
+    filter: none;
     opacity: 1;
   }
   52% {
-    transform: rotate(-18deg) translate(110%, -70%) scale(0.55);
+    transform: rotate(4deg) translate(160%, -6%) scale(0.92, 0.86);
+    filter: blur(1.5px);
     opacity: 0;
   }
   53%,
-  62% {
-    transform: rotate(8deg) translate(-18%, 12%) scale(0.9);
+  68% {
+    transform: rotate(0deg) translate(-30%, 0) scale(1);
+    filter: none;
     opacity: 0;
   }
-  82% {
-    transform: rotate(-3deg) translate(0, 0) scale(1);
+  86% {
+    transform: rotate(-1deg) translate(0, 0) scale(1);
+    filter: none;
     opacity: 1;
   }
   100% {
     transform: rotate(0deg) translate(0, 0) scale(1);
+    filter: none;
     opacity: 1;
   }
 }
 
+@keyframes skid-mark {
+  0%,
+  12% {
+    width: 0;
+    opacity: 0;
+  }
+  20% {
+    width: 28%;
+    opacity: 0.85;
+  }
+  32% {
+    width: 46%;
+    opacity: 1;
+  }
+  48% {
+    width: 58%;
+    opacity: 0.35;
+  }
+  55%,
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes tire-smoke {
+  0%,
+  12% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  20% {
+    opacity: 0.7;
+    transform: translate(-10%, -20%) scale(1);
+  }
+  32% {
+    opacity: 0.55;
+    transform: translate(-40%, -70%) scale(2.1);
+  }
+  42% {
+    opacity: 0.2;
+    transform: translate(-10%, -110%) scale(2.6);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translate(80%, -40%) scale(1.4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-mark img {
+  .trolley img,
+  .skid,
+  .smoke {
     animation: none;
   }
 }
@@ -441,9 +565,15 @@ footer {
     opacity: 0.14;
   }
 
-  .hero-mark img {
+  .hero-mark img,
+  .trolley img {
     width: min(70vw, 320px);
     animation: none;
+  }
+
+  .skid,
+  .smoke {
+    display: none;
   }
 
   .fed-split article + article {
