@@ -1088,20 +1088,191 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .catalog-table {
-    min-width: 36rem;
-    font-size: 0.9rem;
+  .catalog-scroll {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
-  .catalog-table:has(th:nth-child(4)) {
-    min-width: 42rem;
+  .catalog-table {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.88rem;
+  }
+
+  .catalog-table th,
+  .catalog-table td {
+    padding: 0.5rem 0.42rem;
+  }
+
+  .catalog-table th {
+    letter-spacing: 0.04em;
+  }
+
+  .catalog-table th:nth-child(1),
+  .catalog-table td:nth-child(1),
+  .catalog-table th:nth-child(2),
+  .catalog-table td:nth-child(2),
+  .catalog-table th:nth-child(n + 3),
+  .catalog-table td:nth-child(n + 3),
+  .catalog-table:has(th:nth-child(4)) th:nth-child(2),
+  .catalog-table:has(th:nth-child(4)) td:nth-child(2),
+  .catalog-table:has(th:nth-child(4)) th:nth-child(n + 3),
+  .catalog-table:has(th:nth-child(4)) td:nth-child(n + 3) {
+    position: static;
+    left: auto;
+    z-index: auto;
+    box-shadow: none;
   }
 
   .catalog-table th:nth-child(1),
   .catalog-table td:nth-child(1) {
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    box-shadow: 8px 0 8px -8px rgb(0 0 0 / 12%);
+    width: auto;
+  }
+
+  .catalog-table th:nth-child(2),
+  .catalog-table td:nth-child(2) {
+    width: 26%;
+  }
+
+  .catalog-table th:nth-child(n + 3),
+  .catalog-table td:nth-child(n + 3) {
+    width: 5.4rem;
+  }
+
+  .catalog-table .pack {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .catalog-table th:nth-child(3):last-child {
+    font-size: 0;
+    letter-spacing: 0;
+  }
+
+  .catalog-table th:nth-child(3):last-child::after {
+    content: "Price";
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog-table {
+    display: block;
+    position: relative;
+  }
+
+  .catalog-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .catalog-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .catalog-table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name price"
+      "pack price";
+    column-gap: 0.8rem;
+    row-gap: 0.1rem;
+    align-items: baseline;
+    padding: 0.7rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .catalog-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .catalog-table td,
+  .catalog-table th:nth-child(1),
+  .catalog-table td:nth-child(1),
+  .catalog-table th:nth-child(2),
+  .catalog-table td:nth-child(2),
+  .catalog-table th:nth-child(n + 3),
+  .catalog-table td:nth-child(n + 3),
+  .catalog-table:has(th:nth-child(4)) th:nth-child(2),
+  .catalog-table:has(th:nth-child(4)) td:nth-child(2),
+  .catalog-table:has(th:nth-child(4)) th:nth-child(n + 3),
+  .catalog-table:has(th:nth-child(4)) td:nth-child(n + 3) {
+    display: block;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    border: none;
+    background: transparent;
+    text-align: left;
+  }
+
+  .catalog-table td:nth-child(1) {
+    grid-area: name;
+    min-width: 0;
+  }
+
+  .catalog-table td:nth-child(2) {
+    grid-area: pack;
+  }
+
+  .catalog-table td:nth-child(3) {
+    grid-area: price;
+    text-align: right;
+    align-self: center;
+  }
+
+  .catalog-table:has(th:nth-child(4)) tbody tr {
+    grid-template-areas:
+      "name list"
+      "pack rsp";
+  }
+
+  .catalog-table:has(th:nth-child(4)) td:nth-child(3),
+  .catalog-table:has(th:nth-child(4)) td:nth-child(4) {
+    display: grid;
+    grid-template-columns: 2.4rem auto;
+    justify-content: end;
+    align-items: baseline;
+    column-gap: 0.35rem;
+    text-align: right;
+  }
+
+  .catalog-table:has(th:nth-child(4)) td:nth-child(3) {
+    grid-area: list;
+    align-self: end;
+  }
+
+  .catalog-table:has(th:nth-child(4)) td:nth-child(4) {
+    grid-area: rsp;
+    align-self: start;
+  }
+
+  .catalog-table:has(th:nth-child(4)) td.price::before,
+  .catalog-table:has(th:nth-child(4)) td.rsp::before {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .catalog-table:has(th:nth-child(4)) td.price::before {
+    content: "List";
+  }
+
+  .catalog-table:has(th:nth-child(4)) td.rsp::before {
+    content: "RSP";
   }
 }
