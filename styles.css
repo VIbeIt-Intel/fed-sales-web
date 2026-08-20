@@ -259,25 +259,45 @@ nav a:hover {
   padding: 4.5rem 6vw 3.5rem;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(180deg, #f3f1f0 0%, #fafafa 38%, #ffffff 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 6vw;
+  top: 18%;
+  bottom: 18%;
+  width: 2px;
+  background: var(--red);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-copy {
   grid-column: 1;
   grid-row: 1;
-  z-index: 1;
+  z-index: 2;
+  padding-left: 1.25rem;
   padding-right: 1.5rem;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  right: -6vw;
-  top: 12%;
-  width: min(46vw, 460px);
-  height: min(46vw, 460px);
+  right: -10%;
+  top: 50%;
+  width: min(58vw, 560px);
+  height: min(78%, 440px);
   border-radius: 50%;
-  background: var(--red);
-  opacity: 0.07;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(225 6 0 / 0.12) 0%,
+    rgb(225 6 0 / 0.05) 42%,
+    transparent 72%
+  );
+  transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -306,11 +326,27 @@ h1 {
   max-width: 10ch;
 }
 
-h1 em {
+.hero h1 {
+  color: var(--ink);
+  max-width: 12ch;
+  margin-bottom: 0;
+}
+
+.hero h1 em {
+  display: block;
   font-style: italic;
   font-family: Barlow, sans-serif;
   font-weight: 500;
   color: var(--red);
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  background: var(--red);
+  margin: 1.05rem 0 1.2rem;
 }
 
 h2 {
@@ -333,6 +369,11 @@ h2 {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.8rem;
+}
+
+.hero .btn-ghost {
+  background: #fff;
+  border-color: #dedede;
 }
 
 .btn,
@@ -360,15 +401,28 @@ h2 {
 .hero-mark {
   grid-column: 2;
   grid-row: 1;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   pointer-events: none;
+  z-index: 0;
+}
+
+.hero-watermark {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: min(100%, 460px);
+  height: auto;
+  transform: translateY(-50%);
+  opacity: 0.14;
+  mix-blend-mode: multiply;
 }
 
 .trolley {
   position: relative;
-  width: min(100%, 430px);
+  width: min(100%, 460px);
 }
 
 .trolley-rig {
@@ -832,7 +886,14 @@ footer {
   }
 
   .hero {
-    padding-top: 2.5rem;
+    padding-top: 2.6rem;
+    padding-bottom: 2.4rem;
+    background: linear-gradient(180deg, #f4f2f1 0%, #ffffff 48%);
+  }
+
+  .hero::before {
+    top: 14%;
+    bottom: 14%;
   }
 
   .hero-copy,
@@ -841,9 +902,22 @@ footer {
     grid-row: 1;
   }
 
+  .hero-copy {
+    padding-right: 0;
+  }
+
   .hero-mark {
     justify-content: flex-end;
-    opacity: 0.14;
+    opacity: 1;
+  }
+
+  .hero-watermark {
+    opacity: 0.1;
+    width: min(82%, 360px);
+  }
+
+  .trolley {
+    display: none;
   }
 
   .trolley-rig,
@@ -855,6 +929,10 @@ footer {
   .skid,
   .smoke {
     display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4.2rem);
   }
 
   footer {
