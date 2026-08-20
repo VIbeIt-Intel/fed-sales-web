@@ -63,8 +63,6 @@ footer {
   min-height: 88px;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
   overflow: hidden;
 }
 
