@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=tyres2" />
+    <link rel="stylesheet" href="styles.css?v=header1" />
     <script>
       history.scrollRestoration = "manual";
       if (location.hash) {
@@ -32,8 +32,33 @@
     <p class="dev-bar">Developer preview — not live</p>
 
     <header class="top">
-      <a class="brand" href="#top">
-        <img src="assets/logo-mark.png" alt="FED" width="92" height="68" />
+      <a class="brand" href="#top" aria-label="FED home">
+        <span class="brand-scene">
+          <svg class="walker" viewBox="0 0 36 56" aria-hidden="true">
+            <g fill="none" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="8" r="4.5" fill="#171717" stroke="none" />
+              <path d="M16 13 L14 30" />
+              <path d="M15 17 L28 24" />
+              <path class="stride a" d="M14 30 L10 50" />
+              <path class="stride b" d="M14 30 L22 50" />
+            </g>
+          </svg>
+          <span class="brand-cart">
+            <img src="assets/logo-mark.png" alt="" width="92" height="68" />
+          </span>
+          <svg class="brand-truck" viewBox="0 0 108 44" aria-hidden="true">
+            <g fill="none" stroke="#e10600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="64" height="26" rx="2.5" />
+              <path d="M66 16 h14 a4 4 0 0 1 4 4 v12 H66" />
+              <path d="M80 16 l8 -6 h8 v10" />
+              <circle cx="22" cy="36" r="5.5" />
+              <circle cx="22" cy="36" r="2" fill="#e10600" stroke="none" />
+              <circle cx="84" cy="36" r="5.5" />
+              <circle cx="84" cy="36" r="2" fill="#e10600" stroke="none" />
+            </g>
+            <text x="34" y="24" text-anchor="middle" fill="#e10600" font-family="Barlow Condensed, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5">FED</text>
+          </svg>
+        </span>
       </a>
       <input id="nav-toggle" type="checkbox" />
       <label class="nav-btn" for="nav-toggle"><span>Menu</span></label>
