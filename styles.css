@@ -221,13 +221,33 @@ h2 {
   width: min(100%, 430px);
 }
 
-.trolley img {
+.trolley-rig {
+  position: relative;
+  z-index: 1;
+  transform-origin: 22% 92%;
+  animation: trolley-burnout 10s ease-in 0.8s infinite;
+}
+
+.trolley-svg {
   display: block;
   width: 100%;
   height: auto;
+  overflow: visible;
   mix-blend-mode: multiply;
-  transform-origin: 22% 92%;
-  animation: trolley-burnout 10s ease-in 0.8s infinite;
+}
+
+.wheel {
+  transform-box: view-box;
+  animation: wheel-spin 10s linear 0.8s infinite;
+}
+
+.wheel-rear {
+  transform-origin: 114px 196px;
+}
+
+.wheel-front {
+  transform-origin: 258px 196px;
+  animation-name: wheel-spin-front;
 }
 
 .skid {
@@ -380,8 +400,55 @@ h2 {
   }
 }
 
+@keyframes wheel-spin {
+  0%,
+  10% {
+    transform: rotate(0deg);
+  }
+  34% {
+    transform: rotate(1260deg);
+  }
+  52% {
+    transform: rotate(2880deg);
+  }
+  53%,
+  68% {
+    transform: rotate(2880deg);
+  }
+  86% {
+    transform: rotate(3060deg);
+  }
+  100% {
+    transform: rotate(3240deg);
+  }
+}
+
+@keyframes wheel-spin-front {
+  0%,
+  10% {
+    transform: rotate(0deg);
+  }
+  34% {
+    transform: rotate(900deg);
+  }
+  52% {
+    transform: rotate(2340deg);
+  }
+  53%,
+  68% {
+    transform: rotate(2340deg);
+  }
+  86% {
+    transform: rotate(2520deg);
+  }
+  100% {
+    transform: rotate(2700deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .trolley img,
+  .trolley-rig,
+  .wheel,
   .skid,
   .smoke {
     animation: none;
@@ -565,10 +632,14 @@ footer {
     opacity: 0.14;
   }
 
-  .hero-mark img,
-  .trolley img {
-    width: min(70vw, 320px);
+  .trolley img,
+  .trolley-rig,
+  .wheel {
     animation: none;
+  }
+
+  .trolley-svg {
+    width: min(70vw, 320px);
   }
 
   .skid,
