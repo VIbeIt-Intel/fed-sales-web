@@ -261,11 +261,11 @@ h2 {
   gap: 1.5rem;
 }
 
-.range {
+.products {
   background: var(--mist);
 }
 
-.range-list {
+.product-list {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -273,7 +273,7 @@ h2 {
   margin-top: 1.8rem;
 }
 
-.range-list li {
+.product-list li {
   background: #fff;
   border: 1px solid var(--line);
   border-left: 4px solid var(--red);
@@ -363,7 +363,7 @@ footer {
   .hero,
   .fed-split,
   .split,
-  .range-list,
+  .product-list,
   .people,
   footer {
     grid-template-columns: 1fr;
