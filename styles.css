@@ -79,7 +79,7 @@ footer {
 
 .brand {
   position: absolute;
-  left: 0;
+  left: calc(50% - 165px);
   top: 50%;
   z-index: 2;
   pointer-events: auto;
@@ -112,19 +112,19 @@ footer {
 @keyframes trolley-to-bakkie {
   0%,
   12% {
-    left: 0;
+    left: calc(50% - 165px);
     transform: translateY(-50%);
     opacity: 1;
   }
   38%,
   72% {
-    left: calc(50% - 180px);
+    left: calc(50% - 141px);
     transform: translateY(-50%);
     opacity: 1;
   }
   88%,
   100% {
-    left: 0;
+    left: calc(50% - 165px);
     transform: translateY(-50%);
     opacity: 1;
   }
@@ -163,19 +163,19 @@ footer {
 @keyframes trolley-approach-mobile {
   0%,
   12% {
-    left: 0;
+    left: max(0px, calc(68% - 148px));
     transform: translateY(-50%);
     opacity: 1;
   }
   38%,
   72% {
-    left: 12px;
+    left: max(0px, calc(68% - 123px));
     transform: translateY(-50%);
     opacity: 1;
   }
   88%,
   100% {
-    left: 0;
+    left: max(0px, calc(68% - 148px));
     transform: translateY(-50%);
     opacity: 1;
   }
@@ -214,6 +214,7 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .brand {
     animation: none;
+    left: calc(50% - 165px);
     transform: translateY(-50%);
     opacity: 1;
   }
@@ -737,7 +738,7 @@ footer {
   }
 
   .brand {
-    left: 0;
+    left: max(0px, calc(68% - 148px));
     animation-name: trolley-approach-mobile;
   }
 
