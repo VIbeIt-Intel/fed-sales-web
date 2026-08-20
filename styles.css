@@ -59,158 +59,60 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 6vw;
+  padding: 0.85rem 6vw;
+  min-height: 84px;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
+  overflow: hidden;
+}
+
+.bakkie-run {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bakkie-run img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 70px;
+  width: auto;
+  max-width: none;
+  transform: translate(-120%, -50%);
+  animation: bakkie-across 11s linear infinite;
+}
+
+@keyframes bakkie-across {
+  0% {
+    transform: translate(-120%, -50%);
+  }
+  100% {
+    transform: translate(100vw, -50%);
+  }
 }
 
 .brand {
+  position: relative;
+  z-index: 1;
   text-decoration: none;
   color: inherit;
 }
 
-.brand-scene {
-  position: relative;
+.brand img {
   display: block;
-  width: 300px;
-  height: 58px;
-  overflow: hidden;
-}
-
-.walker {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 56px;
-  width: auto;
-  filter: drop-shadow(0 1px 1px rgb(23 23 23 / 22%));
-  animation: header-walk 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.brand-cart {
-  position: absolute;
-  left: 40px;
-  bottom: 2px;
-  animation: header-cart 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.brand-cart img {
-  display: block;
-  height: 36px;
+  height: 48px;
   width: auto;
   mix-blend-mode: multiply;
 }
 
-.brand-truck {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 118px;
-  height: auto;
-  filter: drop-shadow(0 1px 1px rgb(23 23 23 / 16%));
-  animation: header-truck 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes header-walk {
-  0%,
-  8% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  36% {
-    transform: translateX(86px);
-    opacity: 1;
-  }
-  48% {
-    transform: translateX(86px);
-    opacity: 1;
-  }
-  54% {
-    transform: translateX(78px);
-    opacity: 1;
-  }
-  68% {
-    transform: translateX(64px);
-    opacity: 0;
-  }
-  69%,
-  86% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes header-cart {
-  0%,
-  8% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  36% {
-    transform: translate(86px, 0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(138px, -8px) scale(0.4);
-    opacity: 0;
-  }
-  51%,
-  86% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes header-truck {
-  0%,
-  48% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  68% {
-    transform: translateX(130px);
-    opacity: 0;
-  }
-  69%,
-  86% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .walker,
-  .brand-truck {
-    display: none;
+  .bakkie-run img {
     animation: none;
-  }
-
-  .brand-scene {
-    width: auto;
-    overflow: visible;
-  }
-
-  .brand-cart,
-  .walker,
-  .brand-truck {
-    animation: none;
-    position: static;
-    transform: none;
-    opacity: 1;
+    transform: translate(12vw, -50%);
   }
 }
 
@@ -225,11 +127,15 @@ footer {
   cursor: pointer;
   font-weight: 700;
   color: var(--red);
+  position: relative;
+  z-index: 1;
 }
 
 nav {
   display: flex;
   gap: 1.35rem;
+  position: relative;
+  z-index: 1;
 }
 
 nav a {
