@@ -83,14 +83,15 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 54px;
+  height: 56px;
   width: auto;
+  filter: drop-shadow(0 1px 1px rgb(23 23 23 / 22%));
   animation: header-walk 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .brand-cart {
   position: absolute;
-  left: 34px;
+  left: 40px;
   bottom: 2px;
   animation: header-cart 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
@@ -108,6 +109,7 @@ footer {
   bottom: 0;
   width: 118px;
   height: auto;
+  filter: drop-shadow(0 1px 1px rgb(23 23 23 / 16%));
   animation: header-truck 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
