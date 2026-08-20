@@ -283,6 +283,31 @@ nav a:hover {
   padding-right: 1.5rem;
 }
 
+.hero-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem 1rem;
+  margin-bottom: 1.15rem;
+  max-width: 22rem;
+}
+
+.hero-lockup img {
+  display: block;
+  height: 68px;
+  width: auto;
+  flex-shrink: 0;
+  mix-blend-mode: multiply;
+}
+
+.hero-lockup p {
+  font-family: "Barlow Condensed", Barlow, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.42rem, 1.4vw + 1.1rem, 1.78rem);
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  color: var(--red);
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -416,7 +441,7 @@ h2 {
   width: min(100%, 460px);
   height: auto;
   transform: translateY(-50%);
-  opacity: 0.14;
+  opacity: 0.08;
   mix-blend-mode: multiply;
 }
 
@@ -913,8 +938,21 @@ footer {
   }
 
   .hero-watermark {
-    opacity: 0.1;
+    opacity: 0.055;
     width: min(82%, 360px);
+  }
+
+  .hero-lockup {
+    max-width: 18rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-lockup img {
+    height: 52px;
+  }
+
+  .hero-lockup p {
+    font-size: 1.32rem;
   }
 
   .trolley {
