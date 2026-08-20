@@ -274,11 +274,22 @@ h2 {
 }
 
 .product-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
   background: #fff;
   border: 1px solid var(--line);
   border-left: 4px solid var(--red);
-  padding: 0.85rem 1rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.4rem;
   font-weight: 700;
+}
+
+.product-list img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .people {
