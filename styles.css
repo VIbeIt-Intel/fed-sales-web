@@ -79,14 +79,14 @@ footer {
 
 .brand {
   position: absolute;
-  left: calc(50% - 165px);
+  left: calc(50% - 194px);
   top: 50%;
   z-index: 2;
   pointer-events: auto;
   text-decoration: none;
   color: inherit;
   transform: translateY(-50%);
-  animation: trolley-to-bakkie 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: trolley-shuttle 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .brand img {
@@ -106,123 +106,54 @@ footer {
   max-width: none;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: bakkie-meet 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-@keyframes trolley-to-bakkie {
+@keyframes trolley-shuttle {
   0%,
   12% {
-    left: calc(50% - 165px);
+    left: calc(50% - 194px);
     transform: translateY(-50%);
-    opacity: 1;
   }
   38%,
-  72% {
+  52% {
     left: calc(50% - 141px);
     transform: translateY(-50%);
-    opacity: 1;
   }
-  88%,
+  78%,
   100% {
-    left: calc(50% - 165px);
+    left: calc(50% - 194px);
     transform: translateY(-50%);
-    opacity: 1;
   }
 }
 
-@keyframes bakkie-meet {
-  0%,
-  48% {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  78% {
-    left: 50%;
-    transform: translate(55vw, -50%);
-    opacity: 1;
-  }
-  86% {
-    left: 50%;
-    transform: translate(80vw, -50%);
-    opacity: 0;
-  }
-  87%,
-  94% {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-  }
-  100% {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-}
-
-@keyframes trolley-approach-mobile {
+@keyframes trolley-shuttle-mobile {
   0%,
   12% {
-    left: max(0px, calc(68% - 148px));
+    left: max(0px, calc(68% - 176px));
     transform: translateY(-50%);
-    opacity: 1;
   }
   38%,
-  72% {
+  52% {
     left: max(0px, calc(68% - 123px));
     transform: translateY(-50%);
-    opacity: 1;
   }
-  88%,
+  78%,
   100% {
-    left: max(0px, calc(68% - 148px));
+    left: max(0px, calc(68% - 176px));
     transform: translateY(-50%);
-    opacity: 1;
-  }
-}
-
-@keyframes bakkie-meet-mobile {
-  0%,
-  48% {
-    left: 68%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  78% {
-    left: 68%;
-    transform: translate(55vw, -50%);
-    opacity: 1;
-  }
-  86% {
-    left: 68%;
-    transform: translate(80vw, -50%);
-    opacity: 0;
-  }
-  87%,
-  94% {
-    left: 68%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-  }
-  100% {
-    left: 68%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .brand {
     animation: none;
-    left: calc(50% - 165px);
+    left: calc(50% - 194px);
     transform: translateY(-50%);
-    opacity: 1;
   }
 
   .header-bakkie {
     animation: none;
     transform: translate(-50%, -50%);
-    opacity: 1;
   }
 }
 
@@ -738,14 +669,14 @@ footer {
   }
 
   .brand {
-    left: max(0px, calc(68% - 148px));
-    animation-name: trolley-approach-mobile;
+    left: max(0px, calc(68% - 176px));
+    animation-name: trolley-shuttle-mobile;
   }
 
   .header-bakkie {
     height: 52px;
     left: 68%;
-    animation-name: bakkie-meet-mobile;
+    animation: none;
   }
 
   nav {
