@@ -1554,3 +1554,115 @@ footer {
     content: "RSP";
   }
 }
+
+.login-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f3f1f0 0%, #fafafa 38%, #ffffff 100%);
+}
+
+.login-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 26.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 2.15rem 1.7rem 1.9rem;
+}
+
+.login-brand {
+  display: flex;
+  justify-content: center;
+}
+
+.login-brand img {
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+}
+
+.login-eyebrow {
+  margin: 1.25rem 0 0.4rem;
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.login-card h1 {
+  margin: 0;
+  font-size: clamp(1.65rem, 5vw, 2.15rem);
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: none;
+}
+
+.login-kicker {
+  margin: 0.4rem 0 0;
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.login-lead {
+  margin: 0.9rem 0 1.45rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.login-card .field {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin: 0.4rem 0 0.95rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+}
+
+.login-card label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.login-card .btn {
+  width: 100%;
+}
+
+.login-help {
+  margin-top: 1.45rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.login-help a {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.login-foot {
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
