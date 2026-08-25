@@ -839,6 +839,12 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 1.8rem;
+  scroll-margin-top: 1rem;
+}
+
+.people:target article {
+  border-color: #f0c4c2;
+  background: #fffaf9;
 }
 
 .people article {
@@ -883,6 +889,66 @@ h2 {
 .address a {
   color: var(--muted);
   font-weight: 600;
+}
+
+.portal-cta {
+  margin-top: 1.5rem;
+  max-width: 28rem;
+  background: var(--mist);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  border-radius: 18px;
+  padding: 1.15rem 1.25rem 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.portal-cta-lane {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.portal-cta-kicker {
+  flex: 1 1 9.5rem;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.portal-cta .btn,
+.portal-cta .btn-ghost {
+  flex: 0 1 auto;
+  min-height: 44px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.92rem;
+}
+
+.portal-cta .btn {
+  color: #fff;
+}
+
+.portal-cta .btn:hover {
+  background: #c10500;
+  color: #fff;
+}
+
+.portal-cta .btn-ghost {
+  background: #fff;
+}
+
+.portal-cta .btn-ghost:hover {
+  border-color: #f0c4c2;
+  background: #fffaf9;
+}
+
+.portal-cta-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 footer {

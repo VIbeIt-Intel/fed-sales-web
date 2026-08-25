@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=portal2" />
+    <link rel="stylesheet" href="styles.css?v=cta1" />
     <script>
       history.scrollRestoration = "manual";
       (function () {
@@ -403,7 +403,7 @@
       <section class="block contact" id="contact">
         <p class="eyebrow">Contact</p>
         <h2>Place an order. Ask a price. Get on the book.</h2>
-        <div class="people">
+        <div class="people" id="register">
           <article>
             <p class="person">Jean-dré</p>
             <a href="tel:+27606094442">060 609 4442</a>
@@ -426,11 +426,18 @@
             Unit 1438 Sagewood Manor, 15 Anaboom St, Midrand
           </a>
         </p>
-        <p class="address">
-          Already on the book?
-          <!-- Order portal is the Next.js app at fed-sales-office.vercel.app (not GitHub Pages). -->
-          <a href="https://fed-sales-office.vercel.app/login">Log in to order</a>
-        </p>
+        <div class="portal-cta">
+          <div class="portal-cta-lane">
+            <p class="portal-cta-kicker">Already on the book?</p>
+            <!-- Order portal is the Next.js app at fed-sales-office.vercel.app (not GitHub Pages). -->
+            <a class="btn" href="https://fed-sales-office.vercel.app/login">Log in to order</a>
+          </div>
+          <div class="portal-cta-lane">
+            <p class="portal-cta-kicker">New to FED?</p>
+            <a class="btn-ghost" href="#register">Register</a>
+          </div>
+          <p class="portal-cta-note">Ask Jean-dré or Carlo to put you on the book. FED opens accounts — there is no public sign-up.</p>
+        </div>
       </section>
     </main>
 
