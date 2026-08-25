@@ -1659,6 +1659,14 @@ footer {
   font-weight: 700;
 }
 
+.login-error {
+  margin: 0 0 1rem;
+  color: var(--red);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
 .login-foot {
   border-top: 1px solid var(--line);
   padding: 1rem 1.25rem;
