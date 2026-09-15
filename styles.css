@@ -911,6 +911,20 @@ h2 {
   margin-top: 1.5rem;
 }
 
+.social {
+  margin-top: 1rem;
+}
+
+.site-foot a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-foot a:hover {
+  color: var(--red);
+}
+
 .address a {
   color: var(--muted);
   font-weight: 600;
