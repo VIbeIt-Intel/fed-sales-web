@@ -1755,39 +1755,112 @@ footer {
 }
 
 .live-notices {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 0.75rem 1.25rem 0;
+  background: #fffaf9;
+  border-bottom: 1px solid var(--line);
+  padding: 0.9rem 6vw 1.1rem;
   display: grid;
   gap: 0.75rem;
 }
 
-.live-notices article {
+.live-notices article,
+.live-notice-modal article {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) 1fr;
+  gap: 0.95rem;
+  align-items: center;
   border: 1px solid var(--line);
-  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--red);
+  padding: 0.55rem 0.95rem 0.55rem 0.5rem;
   background: #fff;
-}
-
-.live-notices img {
-  display: block;
-  max-height: 120px;
-  width: auto;
 }
 
 .live-notice-photos {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 0.5rem;
 }
 
-.live-notice-photos img {
+.live-notice-photos img,
+.live-notices img {
+  display: block;
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.live-notice-copy {
+  min-width: 0;
+}
+
+.live-notice-kicker {
   margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
 }
 
-.live-notices p {
-  margin: 0.35rem 0 0;
+.live-notices strong,
+.live-notice-modal strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.live-notices p,
+.live-notice-modal p {
+  margin: 0.25rem 0 0;
   color: var(--muted);
+}
+
+.live-notice-lock {
+  overflow: hidden;
+}
+
+.live-notice-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(23, 23, 23, 0.55);
+}
+
+.live-notice-modal article {
+  width: min(28rem, 100%);
+  grid-template-columns: 1fr;
+  padding: 0 0 1.1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.live-notice-modal .live-notice-photos img {
+  height: 200px;
+  border-radius: 0;
+}
+
+.live-notice-modal .live-notice-copy {
+  padding: 0 1.15rem;
+}
+
+.live-notice-modal .btn {
+  margin: 0.9rem 1.15rem 0;
+  width: calc(100% - 2.3rem);
+}
+
+@media (max-width: 700px) {
+  .live-notices article {
+    grid-template-columns: 1fr;
+  }
+
+  .live-notice-photos img,
+  .live-notices img {
+    height: 160px;
+  }
 }
 
 .catalog-table .live-thumb {
