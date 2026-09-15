@@ -47,7 +47,7 @@
     }
     var kicker = document.createElement("p");
     kicker.className = "live-notice-kicker";
-    kicker.textContent = "Now on";
+    kicker.textContent = "Special";
     var h2 = document.createElement("strong");
     h2.className = "live-notice-title";
     h2.textContent = item.title;
@@ -78,11 +78,26 @@
       else document.body.insertBefore(host, document.body.firstChild);
     }
     host.innerHTML = "";
+    var rail = document.createElement("div");
+    rail.className = "live-specials-rail";
+    rail.setAttribute("aria-hidden", "true");
+    var track = document.createElement("p");
+    track.className = "live-specials-track";
+    var bits = items.map(function (item) {
+      return "SPECIALS   ·   " + item.title + "  " + item.body;
+    });
+    var line = "★   " + bits.join("   ★   ") + "   ★   ";
+    track.textContent = line + line + line;
+    rail.appendChild(track);
+    host.appendChild(rail);
+    var row = document.createElement("div");
+    row.className = "live-specials-row";
     items.forEach(function (item) {
       var article = document.createElement("article");
       fillCopy(article, item);
-      host.appendChild(article);
+      row.appendChild(article);
     });
+    host.appendChild(row);
   }
 
   function closePopup() {
