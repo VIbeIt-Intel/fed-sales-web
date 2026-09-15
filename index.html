@@ -33,7 +33,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=ad9" />
+    <link rel="stylesheet" href="styles.css?v=search1" />
     <script>
       history.scrollRestoration = "manual";
       (function () {
@@ -237,7 +237,7 @@
         <p class="eyebrow">Products</p>
         <h2>What we supply.</h2>
         <p class="section-lead">
-          Open a category for indicative prices, or download the current list.
+          Search a product, open a category for indicative prices, or download the current list.
           This site is browse-only. If FED has opened your account,
           <a href="login.html">log in to order</a>.
         </p>
@@ -245,6 +245,13 @@
           <a class="btn" href="https://office.fed-online.co.za/api/public/pricelist">Download price list</a>
           <span>PDF with pictures, packs, and live sell prices. Confirm with Jean-dré or Carlo before you order.</span>
         </p>
+        <form class="product-search" role="search" action="#products">
+          <label>
+            <span class="sr-only">Search products</span>
+            <input type="search" name="q" placeholder="Search a product — chicken, labels, AdBlue…" autocomplete="off" />
+          </label>
+        </form>
+        <div class="product-hits" hidden></div>
         <ul class="product-list">
           <li>
             <a href="products/chicken.html">
@@ -495,5 +502,6 @@
       </a>
     </footer>
       <script src="assets/live-notices.js?v=dom1" data-office="https://office.fed-online.co.za"></script>
+      <script src="assets/live-search.js?v=search1" data-office="https://office.fed-online.co.za"></script>
   </body>
 </html>

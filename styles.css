@@ -787,6 +787,123 @@ h2 {
   max-width: 34rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.product-search {
+  margin-top: 1.15rem;
+}
+
+.product-search input {
+  display: block;
+  width: min(36rem, 100%);
+  min-height: 52px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.product-search input:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+  border-color: var(--red);
+}
+
+.product-hits {
+  margin-top: 1.15rem;
+}
+
+.product-hits-status {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.product-hits-list {
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.product-hits-list a {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 0.55rem 1rem 0.55rem 0.4rem;
+  min-height: 76px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-hits-list a:hover {
+  border-color: #f0c4c2;
+  background: #fffaf9;
+}
+
+.product-hits-list img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-hits-list a:not(:has(img)) {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.product-hits-list strong {
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.product-hits-list small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.product-hits-list .price {
+  font-family: "Barlow Condensed", Barlow, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .product-hits-list a {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .product-hits-list .price {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
 .catalog-pricelist {
   display: flex;
   flex-wrap: wrap;
