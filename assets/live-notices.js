@@ -47,10 +47,12 @@
     }
     var kicker = document.createElement("p");
     kicker.className = "live-notice-kicker";
-    kicker.textContent = "Special";
+    kicker.textContent = "Now on";
     var h2 = document.createElement("strong");
+    h2.className = "live-notice-title";
     h2.textContent = item.title;
     var p = document.createElement("p");
+    p.className = "live-notice-offer";
     p.textContent = item.body;
     var copy = document.createElement("div");
     copy.className = "live-notice-copy";
