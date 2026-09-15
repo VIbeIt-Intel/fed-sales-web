@@ -85,7 +85,7 @@
     if (!first) return;
     var width = first.offsetWidth;
     if (!width) return;
-    track.style.animationDuration = Math.max(16, width / 72) + "s";
+    track.style.animationDuration = Math.max(22, width / 44) + "s";
   }
 
   function renderBanner(items) {
