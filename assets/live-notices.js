@@ -62,12 +62,39 @@
     article.appendChild(copy);
   }
 
+  function noticesSignature(items) {
+    return items
+      .map(function (item) {
+        return [item.id, item.title, item.body, photosOf(item).join(",")].join("\t");
+      })
+      .join("\n");
+  }
+
+  function tickerLine(items) {
+    return (
+      items
+        .map(function (item) {
+          return item.title + "   ·   " + item.body;
+        })
+        .join("     ★     ") + "     ★     "
+    );
+  }
+
+  function paceTrack(track) {
+    var first = track.firstElementChild;
+    if (!first) return;
+    var width = first.offsetWidth;
+    if (!width) return;
+    track.style.animationDuration = Math.max(16, width / 72) + "s";
+  }
+
   function renderBanner(items) {
     var host = document.querySelector(".live-notices");
     if (!items.length) {
       if (host) host.remove();
       return;
     }
+    var sig = noticesSignature(items);
     if (!host) {
       host = document.createElement("div");
       host.className = "live-notices";
@@ -76,19 +103,31 @@
       var header = document.querySelector("header.top");
       if (header && header.parentNode) header.parentNode.insertBefore(host, header.nextSibling);
       else document.body.insertBefore(host, document.body.firstChild);
+    } else if (host.getAttribute("data-sig") === sig) {
+      return;
     }
+    host.setAttribute("data-sig", sig);
     host.innerHTML = "";
     var rail = document.createElement("div");
     rail.className = "live-specials-rail";
     rail.setAttribute("aria-hidden", "true");
-    var track = document.createElement("p");
+    var stamp = document.createElement("span");
+    stamp.className = "live-specials-stamp";
+    stamp.textContent = "Specials";
+    var windowEl = document.createElement("div");
+    windowEl.className = "live-specials-window";
+    var track = document.createElement("div");
     track.className = "live-specials-track";
-    var bits = items.map(function (item) {
-      return "SPECIALS   ·   " + item.title + "  " + item.body;
-    });
-    var line = "★   " + bits.join("   ★   ") + "   ★   ";
-    track.textContent = line + line + line;
-    rail.appendChild(track);
+    var unit = tickerLine(items);
+    var copy = document.createElement("span");
+    copy.textContent = unit + unit + unit;
+    var clone = copy.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(copy);
+    track.appendChild(clone);
+    windowEl.appendChild(track);
+    rail.appendChild(stamp);
+    rail.appendChild(windowEl);
     host.appendChild(rail);
     var row = document.createElement("div");
     row.className = "live-specials-row";
@@ -98,6 +137,9 @@
       row.appendChild(article);
     });
     host.appendChild(row);
+    requestAnimationFrame(function () {
+      paceTrack(track);
+    });
   }
 
   function closePopup() {
