@@ -2,7 +2,7 @@
   var office =
     document.currentScript && document.currentScript.getAttribute("data-office")
       ? document.currentScript.getAttribute("data-office")
-      : "https://fed-sales-office.vercel.app";
+      : "https://office.fed-online.co.za";
   var slugMatch = location.pathname.match(/\/products\/([a-z0-9-]+)\.html/i);
   var slug =
     (document.currentScript && document.currentScript.getAttribute("data-slug")) ||

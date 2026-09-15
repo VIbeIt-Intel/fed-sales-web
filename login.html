@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=login2" />
+    <link rel="stylesheet" href="styles.css?v=login3" />
   </head>
   <body>
     <p class="dev-bar">Developer preview — sneak peek, not live</p>
@@ -29,7 +29,9 @@
             sign-up.
           </p>
           <p id="login-error" class="login-error" hidden>Those details do not match a FED account.</p>
-          <form action="https://fed-sales-office.vercel.app/api/login" method="post">
+          <p id="login-setup" class="login-error" hidden>Create your password first — we emailed a link to this address.</p>
+          <p id="login-set" class="login-ok" hidden>Password saved. Log in with your email and the password you created.</p>
+          <form action="https://office.fed-online.co.za/api/login" method="post">
             <label>
               Email
               <input class="field" name="email" type="email" required autocomplete="username" />
@@ -41,8 +43,13 @@
             <button class="btn" type="submit">Log in</button>
           </form>
           <script>
-            if (/error=/.test(location.search)) {
+            if (/error=setup/.test(location.search)) {
+              document.getElementById("login-setup").hidden = false;
+            } else if (/error=/.test(location.search)) {
               document.getElementById("login-error").hidden = false;
+            }
+            if (/[?&]set=1/.test(location.search)) {
+              document.getElementById("login-set").hidden = false;
             }
           </script>
           <p class="login-help">

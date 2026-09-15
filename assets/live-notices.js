@@ -2,7 +2,7 @@
   var office =
     document.currentScript && document.currentScript.getAttribute("data-office")
       ? document.currentScript.getAttribute("data-office")
-      : "https://fed-sales-office.vercel.app";
+      : "https://office.fed-online.co.za";
   var url = office.replace(/\/$/, "") + "/api/public/notices";
   var SEEN_KEY = "fed.notices.popup";
   var known = {};
