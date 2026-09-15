@@ -33,7 +33,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=search1" />
+    <link rel="stylesheet" href="styles.css?v=search2" />
     <script>
       history.scrollRestoration = "manual";
       (function () {
@@ -248,7 +248,13 @@
         <form class="product-search" role="search" action="#products">
           <label>
             <span class="sr-only">Search products</span>
-            <input type="search" name="q" placeholder="Search a product — chicken, labels, AdBlue…" autocomplete="off" />
+            <span class="product-search-field">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="6.5" />
+                <path d="M16.5 16.5L21 21" />
+              </svg>
+              <input type="search" name="q" placeholder="Search a product — chicken, labels, AdBlue…" autocomplete="off" />
+            </span>
           </label>
         </form>
         <div class="product-hits" hidden></div>
@@ -502,6 +508,6 @@
       </a>
     </footer>
       <script src="assets/live-notices.js?v=dom1" data-office="https://office.fed-online.co.za"></script>
-      <script src="assets/live-search.js?v=search1" data-office="https://office.fed-online.co.za"></script>
+      <script src="assets/live-search.js?v=search2" data-office="https://office.fed-online.co.za"></script>
   </body>
 </html>

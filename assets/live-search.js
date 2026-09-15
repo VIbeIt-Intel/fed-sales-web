@@ -54,13 +54,17 @@
       }
       var copy = document.createElement("span");
       copy.className = "copy";
+      var kicker = document.createElement("span");
+      kicker.className = "kicker";
+      kicker.textContent = item.category || "";
       var strong = document.createElement("strong");
       strong.textContent = item.name;
       var meta = document.createElement("small");
-      var bits = [packOf(item), item.sku, item.category].filter(Boolean);
+      var bits = [packOf(item), item.sku].filter(Boolean);
       meta.textContent = bits.join(" · ");
+      copy.appendChild(kicker);
       copy.appendChild(strong);
-      copy.appendChild(meta);
+      if (bits.length) copy.appendChild(meta);
       a.appendChild(copy);
       var price = document.createElement("span");
       price.className = "price";
