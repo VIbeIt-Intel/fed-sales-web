@@ -3,7 +3,7 @@
     document.currentScript && document.currentScript.getAttribute("data-office")
       ? document.currentScript.getAttribute("data-office")
       : "https://office.fed-online.co.za";
-  var slugMatch = location.pathname.match(/\/products\/([a-z0-9-]+)\.html/i);
+  var slugMatch = location.pathname.match(/\/products\/([a-z0-9-]+)/i);
   var slug =
     (document.currentScript && document.currentScript.getAttribute("data-slug")) ||
     (slugMatch ? slugMatch[1] : "");

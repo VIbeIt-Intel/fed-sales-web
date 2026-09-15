@@ -43,7 +43,7 @@
     items.forEach(function (item) {
       var li = document.createElement("li");
       var a = document.createElement("a");
-      a.href = "products/" + encodeURIComponent(item.slug) + ".html";
+      a.href = "/products/" + encodeURIComponent(item.slug);
       if (item.imageUrl) {
         var img = document.createElement("img");
         img.src = item.imageUrl;
