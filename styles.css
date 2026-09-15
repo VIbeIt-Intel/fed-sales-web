@@ -952,13 +952,64 @@ h2 {
 }
 
 footer {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-foot {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.4rem 6vw 2rem;
+  padding: 1.4rem 6vw 1.1rem;
+}
+
+.footer-vibeit {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  padding: 1.35rem 6vw 2.1rem;
   border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.9rem;
+  background: #fff;
+  text-decoration: none;
+}
+
+.footer-vibeit-sign {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #6a6a6a;
+}
+
+.footer-vibeit img {
+  width: 7.4rem;
+  height: 7.4rem;
+  margin: -0.45rem 0 -0.25rem;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.footer-vibeit-cta {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.28rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  background-image: linear-gradient(105deg, #c45cff 0%, #7a5cff 22%, #2ad6ff 52%, #ff9a3c 86%, #ff7a2e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-vibeit:hover .footer-vibeit-sign {
+  color: #171717;
 }
 
 @media (max-width: 900px) {
@@ -1018,8 +1069,7 @@ footer {
   .fed-split,
   .split,
   .product-list,
-  .people,
-  footer {
+  .people {
     grid-template-columns: 1fr;
   }
 
@@ -1133,10 +1183,6 @@ footer {
   .hero-actions {
     grid-area: act;
     padding-left: 1.25rem;
-  }
-
-  footer {
-    display: grid;
   }
 }
 
@@ -1667,10 +1713,62 @@ footer {
   font-size: 0.92rem;
 }
 
+.login-ok {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
 .login-foot {
   border-top: 1px solid var(--line);
   padding: 1rem 1.25rem;
   text-align: center;
   font-size: 0.75rem;
   color: var(--muted);
+}
+
+.live-notices {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.live-notices article {
+  border: 1px solid var(--line);
+  padding: 0.85rem 1rem;
+  background: #fff;
+}
+
+.live-notices img {
+  display: block;
+  max-height: 120px;
+  width: auto;
+}
+
+.live-notice-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.live-notice-photos img {
+  margin: 0;
+}
+
+.live-notices p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.catalog-table .live-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  margin-right: 0.6rem;
+  vertical-align: middle;
 }
