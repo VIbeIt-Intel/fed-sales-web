@@ -2001,14 +2001,19 @@ footer {
 }
 
 .login-contact-actions .btn,
-.login-contact-actions .btn-ghost {
+.login-contact-actions .btn-ink {
   min-height: 42px;
   padding: 0.45rem 0.7rem;
   font-size: 0.84rem;
+  color: #fff;
 }
 
 .login-contact-actions .btn:hover {
   background: #c10500;
+}
+
+.login-contact-actions .btn-ink:hover {
+  background: #000;
 }
 
 .login-help {
