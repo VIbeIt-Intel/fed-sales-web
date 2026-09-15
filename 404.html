@@ -8,6 +8,10 @@
     <script>
       (function () {
         var path = location.pathname || "/";
+        if (/\/index\.html$/i.test(path)) {
+          location.replace("/" + location.search + location.hash);
+          return;
+        }
         if (/\.html$/i.test(path)) {
           location.replace(path.replace(/\.html$/i, "") + location.search + location.hash);
         }

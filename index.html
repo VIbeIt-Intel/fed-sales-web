@@ -37,6 +37,12 @@
     <script>
       history.scrollRestoration = "manual";
       (function () {
+        function publicPath() {
+          return /\/index\.html$/i.test(location.pathname) ? "/" : location.pathname;
+        }
+        if (publicPath() !== location.pathname) {
+          history.replaceState(null, "", publicPath() + location.search + location.hash);
+        }
         var KEY = "fed-section-nav";
         var fromNav = false;
         try {
@@ -76,7 +82,7 @@
 
         function stripHash() {
           if (location.hash) {
-            history.replaceState(null, "", location.pathname + location.search);
+            history.replaceState(null, "", publicPath() + location.search);
           }
         }
 
@@ -121,16 +127,16 @@
     <header class="top">
       <input id="nav-toggle" type="checkbox" tabindex="-1" />
       <div class="load-lane">
-        <a class="brand" href="#top" aria-label="FED home">
+        <a class="brand" href="/" aria-label="FED home">
           <img src="assets/logo-mark.png" alt="" width="92" height="68" />
         </a>
         <img class="header-bakkie" src="assets/header-van.jpg?v=header17" alt="" width="220" height="124" />
       </div>
       <label class="nav-btn" for="nav-toggle"><span class="nav-open">Menu</span><span class="nav-close">Close</span></label>
       <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+        <a href="/#about">About</a>
+        <a href="/#products">Products</a>
+        <a href="/#contact">Contact</a>
         <!-- Order portal is the Next.js app at fed-sales-office.vercel.app (not GitHub Pages). -->
         <a href="/login">Log in to order</a>
       </nav>
@@ -149,8 +155,8 @@
             stock without the runaround. One call. The products you need. Direct to you.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#contact">Talk to us</a>
-            <a class="btn-ghost" href="#products">View products</a>
+            <a class="btn" href="/#contact">Talk to us</a>
+            <a class="btn-ghost" href="/#products">View products</a>
             <!-- Order portal is the Next.js app at fed-sales-office.vercel.app (not GitHub Pages). -->
             <a class="btn-ghost" href="/login">Log in to order</a>
           </div>
@@ -477,7 +483,7 @@
           </div>
           <div class="portal-cta-lane">
             <p class="portal-cta-kicker">New to FED?</p>
-            <a class="btn-ghost" href="#register">Register</a>
+            <a class="btn-ghost" href="/#register">Register</a>
           </div>
           <p class="portal-cta-note">Ask Jean-dré or Carlo to put you on the book. FED opens accounts — there is no public sign-up.</p>
         </div>
