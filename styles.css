@@ -1091,7 +1091,7 @@ h2 {
 
 .people-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: stretch;
   gap: 0.5rem;
   margin-top: 0.85rem;
@@ -1100,19 +1100,19 @@ h2 {
 .people-actions .btn,
 .people-actions .btn-ink {
   min-width: 0;
-  width: 100%;
   min-height: 42px;
-  padding: 0.45rem 0.55rem;
-  font-size: 0.74rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.76rem;
   justify-content: center;
   text-align: center;
   line-height: 1.15;
-  white-space: normal;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 .people-actions .btn {
+  width: auto;
   color: #fff;
+  padding-inline: 0.95rem;
 }
 
 .people-actions .btn:hover {
@@ -1121,7 +1121,9 @@ h2 {
 }
 
 .people-actions .btn-ink {
-  word-break: break-word;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .site-foot a {
