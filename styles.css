@@ -2343,6 +2343,10 @@ footer {
 }
 
 @media (max-width: 900px) {
+  .live-notices:empty {
+    min-height: 386px;
+  }
+
   .live-specials-row:has(> article:nth-child(2)) {
     grid-template-columns: 1fr;
   }
@@ -2355,7 +2359,7 @@ footer {
 
 @media (max-width: 700px) {
   .live-notices:empty {
-    min-height: 162px;
+    min-height: 274px;
   }
 
   .live-specials-row > article:has(.live-notice-photos) {
