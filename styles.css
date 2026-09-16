@@ -1204,6 +1204,7 @@ footer {
 }
 
 .foot-actions {
+  position: static;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1265,6 +1266,7 @@ footer {
   .foot-place,
   .foot-actions {
     justify-content: flex-start;
+    position: static;
   }
 
   .foot-act-map {
