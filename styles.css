@@ -1228,6 +1228,17 @@ footer {
   color: #8f8f8f;
 }
 
+.site-foot .foot-legal a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.site-foot .foot-legal a:hover {
+  color: #fff;
+}
+
 .foot-place {
   display: flex;
   justify-content: flex-end;
@@ -2620,4 +2631,75 @@ footer {
   object-fit: cover;
   margin-right: 0.6rem;
   vertical-align: middle;
+}
+
+.terms-doc {
+  max-width: 46rem;
+  padding-top: 2.6rem;
+  padding-bottom: 3.2rem;
+}
+
+.terms-doc h1 {
+  margin: 0 0 0.85rem;
+}
+
+.terms-party {
+  margin: 0 0 1.15rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.terms-party p {
+  margin: 0;
+  max-width: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.terms-party .terms-name {
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+  font-family: "Barlow Condensed", Barlow, sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.terms-applied {
+  margin: 0 0 1.15rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.terms-doc h2 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.terms-doc p {
+  margin: 0 0 0.7rem;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.terms-doc a {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.login-terms {
+  margin: 0.85rem 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.login-terms a {
+  color: var(--ink);
+  font-weight: 700;
 }
