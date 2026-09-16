@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fed-online.co.za/sitemap.xml
