@@ -28,8 +28,10 @@
   }
 
   function photosOf(item) {
-    if (item.imageUrls && item.imageUrls.length) return item.imageUrls;
-    return item.imageUrl ? [item.imageUrl] : [];
+    var urls = item.imageUrls && item.imageUrls.length ? item.imageUrls : item.imageUrl ? [item.imageUrl] : [];
+    return urls.filter(function (src) {
+      return src && !/^data:/i.test(src);
+    });
   }
 
   function fillCopy(article, item) {
@@ -37,12 +39,7 @@
     if (urls.length) {
       var row = document.createElement("div");
       row.className = "live-notice-photos";
-      urls.forEach(function (src) {
-        var img = document.createElement("img");
-        img.src = src;
-        img.alt = "";
-        row.appendChild(img);
-      });
+      row.setAttribute("data-photos", urls.join("\n"));
       article.appendChild(row);
     }
     var kicker = document.createElement("p");
@@ -60,6 +57,21 @@
     copy.appendChild(h2);
     copy.appendChild(p);
     article.appendChild(copy);
+  }
+
+  function attachPhotos(root) {
+    root.querySelectorAll(".live-notice-photos").forEach(function (row) {
+      if (row.querySelector("img")) return;
+      var urls = (row.getAttribute("data-photos") || "").split("\n").filter(Boolean);
+      urls.forEach(function (src) {
+        var img = document.createElement("img");
+        img.alt = "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.src = src;
+        row.appendChild(img);
+      });
+    });
   }
 
   function noticesSignature(items) {
@@ -138,6 +150,7 @@
     host.appendChild(row);
     requestAnimationFrame(function () {
       paceTrack(track);
+      attachPhotos(host);
     });
   }
 
@@ -171,6 +184,9 @@
     });
     document.body.classList.add("live-notice-lock");
     document.body.appendChild(modal);
+    requestAnimationFrame(function () {
+      attachPhotos(card);
+    });
   }
 
   function tick() {
