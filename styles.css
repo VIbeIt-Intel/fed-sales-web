@@ -698,6 +698,7 @@ h2 {
   height: 3.05rem;
   display: grid;
   place-items: center;
+  align-self: center;
   color: var(--red);
 }
 
@@ -717,13 +718,15 @@ h2 {
   color: var(--red);
   -webkit-text-fill-color: var(--red);
   letter-spacing: -0.045em;
-  margin-right: 0.18em;
+  margin-right: calc(0.09em - 0.275rem);
+  align-self: center;
 }
 
 .fed-text {
   width: max-content;
   max-width: 13.4rem;
-  padding-top: 0.08em;
+  padding-top: 0.12em;
+  align-self: start;
 }
 
 .fed-split h2 {
@@ -744,14 +747,6 @@ h2 {
   font-size: 0.9rem;
   line-height: 1.32;
   color: #222;
-}
-
-.fed-split .fed-people {
-  margin-top: 0.22rem;
-  color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
 @media (max-width: 1100px) and (min-width: 901px) {
@@ -1381,7 +1376,7 @@ footer {
   .fed-letter {
     font-size: 4.6rem;
     line-height: 0.78;
-    margin-right: 0.16em;
+    margin-right: calc(0.08em - 0.25rem);
   }
 
   .fed-text {
