@@ -673,24 +673,28 @@ h2 {
 }
 
 .fed-split {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   gap: 0;
-  padding: 1.55rem 6vw 1.45rem;
+  width: 100%;
+  padding: 1.2rem 4vw 1.1rem;
   background: #fff;
   border-block: 1px solid #6a6a6a;
 }
 
 .fed-split article {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  display: flex;
   align-items: center;
-  column-gap: 0.7rem;
+  justify-content: center;
+  gap: 0.45rem;
+  flex: 1 1 0;
+  max-width: 19.75rem;
   background: #fff;
   border: 0;
   border-right: 2px solid var(--red);
-  padding: 0.35rem 1.35rem;
-  min-height: 0;
+  padding: 0.5rem 0.95rem;
+  min-width: 0;
 }
 
 .fed-split article:last-child {
@@ -698,23 +702,26 @@ h2 {
 }
 
 .fed-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2.55rem;
+  height: 2.55rem;
   display: grid;
   place-items: center;
+  flex: 0 0 auto;
   color: var(--red);
+  opacity: 0.95;
 }
 
 .fed-icon svg {
-  width: 2.55rem;
-  height: 2.55rem;
+  width: 2.15rem;
+  height: 2.15rem;
   display: block;
 }
 
 .fed-copy {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 0.28rem;
+  grid-template-columns: auto minmax(0, 12.5rem);
+  column-gap: 0.12em;
+  row-gap: 0.12rem;
   align-items: start;
   min-width: 0;
 }
@@ -730,35 +737,36 @@ h2 {
   font-family: "Barlow Condensed", Barlow, sans-serif;
   font-weight: 800;
   font-style: italic;
-  font-size: clamp(4.6rem, 6.4vw, 6.6rem);
-  line-height: 0.76;
+  font-size: clamp(3.8rem, 4.8vw, 5.1rem);
+  line-height: 0.74;
   color: var(--red);
   -webkit-text-fill-color: var(--red);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
+  margin-right: -0.08em;
 }
 
 .fed-word {
   font-family: "Barlow Condensed", Barlow, sans-serif;
   font-weight: 800;
-  font-size: clamp(1.55rem, 1.15vw + 1.2rem, 1.95rem);
+  font-size: clamp(1.42rem, 0.7vw + 1.15rem, 1.65rem);
   line-height: 1;
   color: var(--ink);
   letter-spacing: 0.01em;
-  padding-top: 0.42em;
+  padding-top: 0.38em;
 }
 
 .fed-split p {
   grid-column: 2;
   max-width: none;
-  font-size: 1.02rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.38;
   color: #2f2f2f;
 }
 
 .fed-split .fed-people {
-  margin-top: 0.28rem;
+  margin-top: 0.2rem;
   color: var(--ink);
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -1344,14 +1352,19 @@ footer {
   }
 
   .fed-split {
+    display: grid;
+    grid-template-columns: 1fr;
     padding: 0.85rem 6vw 1rem;
-    gap: 0.7rem;
+    gap: 0.65rem;
     border-block: 1px solid #6a6a6a;
   }
 
   .fed-split article {
-    padding: 0.85rem 0.85rem 0.85rem 0.75rem;
-    column-gap: 0.55rem;
+    justify-content: flex-start;
+    flex: none;
+    max-width: none;
+    padding: 0.8rem 0.85rem 0.8rem 0.75rem;
+    gap: 0.45rem;
     border-right: 0;
     border: 1px solid #6a6a6a;
     border-left: 4px solid var(--red);
@@ -1361,23 +1374,27 @@ footer {
     border-right: 1px solid #6a6a6a;
   }
 
+  .fed-copy {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
   .fed-letter {
-    font-size: 3.9rem;
+    font-size: 3.5rem;
   }
 
   .fed-word {
-    font-size: 1.55rem;
-    padding-top: 0.28em;
+    font-size: 1.45rem;
+    padding-top: 0.3em;
   }
 
   .fed-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.3rem;
+    height: 2.3rem;
   }
 
   .fed-icon svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.95rem;
+    height: 1.95rem;
   }
 
   .hero {
