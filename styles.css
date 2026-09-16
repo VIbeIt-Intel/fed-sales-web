@@ -2684,7 +2684,12 @@ footer {
 
 .terms-doc h2 {
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-family: "Barlow Condensed", Barlow, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 0.55rem + 2.1vw, 1.28rem);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  white-space: nowrap;
   break-after: avoid;
   break-inside: avoid;
 }
