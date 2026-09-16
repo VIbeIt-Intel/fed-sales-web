@@ -35,28 +35,15 @@ body::before {
   z-index: 0;
 }
 
-.dev-bar,
 .top,
 main,
 footer {
   position: relative;
 }
 
-.dev-bar,
 main,
 footer {
   z-index: 1;
-}
-
-.dev-bar {
-  background: var(--red);
-  color: #fff;
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
 }
 
 .top {
