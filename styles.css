@@ -677,20 +677,20 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   width: 100%;
-  padding: 1.35rem 5vw 1.25rem;
+  padding: 1.4rem 4.5vw 1.3rem;
   background: #fff;
   border-block: 1px solid #6a6a6a;
 }
 
 .fed-split article {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto auto minmax(0, 1fr);
   align-items: center;
-  column-gap: 0.95rem;
+  column-gap: 0.85rem;
   background: #fff;
   border: 0;
   border-right: 2px solid var(--red);
-  padding: 0.85rem 1.45rem 0.85rem 1.2rem;
+  padding: 0.7rem 1.5rem 0.7rem 1.15rem;
   min-width: 0;
 }
 
@@ -699,67 +699,55 @@ h2 {
 }
 
 .fed-icon {
-  width: 2.85rem;
-  height: 2.85rem;
+  width: 2.9rem;
+  height: 2.9rem;
   display: grid;
   place-items: center;
   color: var(--red);
 }
 
 .fed-icon svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.45rem;
+  height: 2.45rem;
   display: block;
 }
 
-.fed-copy {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 0.06rem;
-  row-gap: 0.2rem;
-  align-items: start;
-  min-width: 0;
-}
-
-.fed-split h2 {
-  display: contents;
-}
-
 .fed-letter {
-  grid-column: 1;
-  grid-row: 1 / -1;
-  align-self: start;
   font-family: "Barlow Condensed", Barlow, sans-serif;
   font-weight: 800;
   font-style: normal;
-  font-size: clamp(4.6rem, 5.6vw, 6rem);
+  font-size: clamp(4.8rem, 6vw, 6.2rem);
   line-height: 0.82;
   color: var(--red);
   -webkit-text-fill-color: var(--red);
   letter-spacing: -0.03em;
 }
 
-.fed-word {
-  font-family: "Barlow Condensed", Barlow, sans-serif;
-  font-weight: 800;
-  font-size: clamp(1.55rem, 1.1vw + 1.15rem, 1.85rem);
+.fed-text {
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.fed-split h2 {
+  display: block;
+  max-width: none;
+  margin: 0 0 0.28rem;
+  font-size: clamp(1.6rem, 1.2vw + 1.2rem, 1.9rem);
   line-height: 1;
   color: var(--ink);
   letter-spacing: 0.01em;
-  padding-top: 0.32rem;
-  margin-left: -0.12em;
 }
 
 .fed-split p {
-  grid-column: 2;
-  max-width: 18rem;
-  font-size: 0.98rem;
-  line-height: 1.4;
+  max-width: 16.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.38;
   color: #2c2c2c;
 }
 
 .fed-split .fed-people {
-  margin-top: 0.25rem;
+  margin-top: 0.28rem;
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 700;
@@ -1355,8 +1343,9 @@ footer {
   }
 
   .fed-split article {
-    column-gap: 0.75rem;
-    padding: 0.9rem 0.95rem 0.9rem 0.85rem;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    column-gap: 0.7rem;
+    padding: 0.85rem 0.95rem 0.85rem 0.8rem;
     border-right: 0;
     border: 1px solid #6a6a6a;
     border-left: 4px solid var(--red);
@@ -1367,12 +1356,11 @@ footer {
   }
 
   .fed-letter {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 
-  .fed-word {
-    font-size: 1.5rem;
-    padding-top: 0.28rem;
+  .fed-split h2 {
+    font-size: 1.55rem;
   }
 
   .fed-icon {
