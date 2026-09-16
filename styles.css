@@ -1090,17 +1090,22 @@ h2 {
 }
 
 .people-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0.5rem;
   margin-top: 0.85rem;
 }
 
 .people-actions .btn,
 .people-actions .btn-ink {
+  min-width: 0;
+  width: 100%;
   min-height: 42px;
-  padding: 0.45rem 1.05rem;
-  font-size: 0.84rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.78rem;
+  justify-content: center;
+  text-align: center;
 }
 
 .people-actions .btn {
@@ -1113,7 +1118,6 @@ h2 {
 }
 
 .people-actions .btn-ink {
-  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
