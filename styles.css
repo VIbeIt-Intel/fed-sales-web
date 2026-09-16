@@ -2711,16 +2711,6 @@ footer {
 }
 
 @media (min-width: 900px) {
-  .terms-party {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.12rem 3rem;
-  }
-
-  .terms-party .terms-name {
-    grid-column: 1 / -1;
-  }
-
   .terms-read {
     column-count: 2;
     column-gap: 3.75rem;
