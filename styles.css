@@ -1103,9 +1103,12 @@ h2 {
   width: 100%;
   min-height: 42px;
   padding: 0.45rem 0.55rem;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   justify-content: center;
   text-align: center;
+  line-height: 1.15;
+  white-space: normal;
+  overflow: hidden;
 }
 
 .people-actions .btn {
@@ -1118,9 +1121,7 @@ h2 {
 }
 
 .people-actions .btn-ink {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
 .site-foot a {
