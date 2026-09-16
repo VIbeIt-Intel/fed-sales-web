@@ -1058,10 +1058,6 @@ h2 {
   line-height: 1.3;
 }
 
-.contact h2 {
-  max-width: none;
-}
-
 .people {
   display: grid;
   grid-template-columns: 1fr 1fr;
