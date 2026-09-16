@@ -1113,6 +1113,14 @@ h2 {
   color: inherit;
 }
 
+.site-foot a.foot-act {
+  color: #fff;
+}
+
+.site-foot a.foot-act:hover {
+  color: #fff;
+}
+
 .portal-cta {
   margin-top: 1.5rem;
   background: #fff;
