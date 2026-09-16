@@ -1210,6 +1210,14 @@ footer {
   align-items: center;
   justify-content: flex-end;
   gap: 0.55rem;
+  inset: auto;
+  top: auto;
+  right: auto;
+  left: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 
 .foot-act {
