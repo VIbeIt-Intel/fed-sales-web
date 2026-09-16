@@ -5,6 +5,7 @@
       : "https://office.fed-online.co.za";
   var url = office.replace(/\/$/, "") + "/api/public/notices";
   var SEEN_KEY = "fed.notices.popup";
+  var LIST_KEY = "fed.notices.list";
   var known = {};
   var firstTick = true;
   var popupOpen = false;
@@ -189,36 +190,58 @@
     });
   }
 
-  function tick() {
-    fetch(url, { cache: "no-store" })
-      .then(function (res) {
-        return res.ok ? res.json() : [];
-      })
-      .then(function (items) {
-        if (!Array.isArray(items)) items = [];
-        renderBanner(items);
-        if (firstTick) {
-          items.forEach(function (item) {
-            known[item.id] = true;
-          });
-          firstTick = false;
-          return;
-        }
-        var fresh = items.filter(function (item) {
-          return item && item.id && !known[item.id] && readSeen().indexOf(item.id) === -1;
-        });
-        items.forEach(function (item) {
-          if (item && item.id) known[item.id] = true;
-        });
-        if (fresh.length) showPopup(fresh[0]);
-      })
+  function readListCache() {
+    try {
+      var raw = JSON.parse(sessionStorage.getItem(LIST_KEY) || "null");
+      return Array.isArray(raw) ? raw : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeListCache(items) {
+    try {
+      sessionStorage.setItem(LIST_KEY, JSON.stringify(items));
+    } catch (e) {}
+  }
+
+  function apply(items) {
+    if (!Array.isArray(items)) items = [];
+    writeListCache(items);
+    renderBanner(items);
+    if (firstTick) {
+      items.forEach(function (item) {
+        if (item && item.id) known[item.id] = true;
+      });
+      firstTick = false;
+      return;
+    }
+    var fresh = items.filter(function (item) {
+      return item && item.id && !known[item.id] && readSeen().indexOf(item.id) === -1;
+    });
+    items.forEach(function (item) {
+      if (item && item.id) known[item.id] = true;
+    });
+    if (fresh.length) showPopup(fresh[0]);
+  }
+
+  function load() {
+    var pending = window.__fedNotices;
+    window.__fedNotices = null;
+    return (pending || fetch(url).then(function (res) {
+      return res.ok ? res.json() : [];
+    }))
+      .then(apply)
       .catch(function () {
-        renderBanner([]);
+        if (!document.querySelector(".live-notices article")) renderBanner([]);
       });
   }
 
-  tick();
-  setInterval(tick, 12000);
+  var cached = readListCache();
+  if (cached && cached.length) renderBanner(cached);
+
+  load();
+  setInterval(load, 12000);
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closePopup();
   });

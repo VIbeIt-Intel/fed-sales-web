@@ -27,8 +27,14 @@
     <meta name="twitter:image" content="https://fed-online.co.za/assets/og-share.png" />
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/logo-mark.png" />
+    <link rel="preconnect" href="https://office.fed-online.co.za" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      window.__fedNotices = fetch("https://office.fed-online.co.za/api/public/notices").then(function (res) {
+        return res.ok ? res.json() : [];
+      });
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Barlow+Condensed:wght@700;800&display=swap"
       rel="stylesheet"
@@ -140,6 +146,7 @@
       </nav>
     </header>
     <div class="live-notices" role="region" aria-label="FED specials"></div>
+    <script src="assets/live-notices.js?v=fast2" data-office="https://office.fed-online.co.za"></script>
 
     <main id="top">
       <section class="hero">
@@ -512,7 +519,6 @@
         <span class="footer-vibeit-cta">Want a site like this?</span>
       </a>
     </footer>
-      <script src="assets/live-notices.js?v=fast1" data-office="https://office.fed-online.co.za"></script>
       <script src="assets/live-search.js?v=urls1" data-office="https://office.fed-online.co.za"></script>
   </body>
 </html>
