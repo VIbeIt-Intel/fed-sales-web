@@ -1224,13 +1224,14 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
-  min-height: 42px;
-  padding: 0.35rem 0.95rem;
+  min-height: 44px;
+  padding: 0.4rem 1.05rem;
   border-radius: 999px;
   border: 1px solid #333;
   background: #222;
   color: #fff;
-  font-size: 0.86rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
@@ -1240,44 +1241,91 @@ footer {
 }
 
 .foot-act:hover {
-  border-color: #fff;
-  background: #2a2a2a;
-  color: #fff;
+  filter: brightness(1.08);
 }
 
 .foot-act-wa {
-  background: #25d366;
-  border-color: #25d366;
-  color: #06210f;
+  background: #128c7e;
+  border-color: #128c7e;
+  color: #fff;
 }
 
 .foot-act-wa:hover {
-  background: #1fbe59;
-  border-color: #1fbe59;
-  color: #06210f;
+  background: #0f7a6e;
+  border-color: #0f7a6e;
+  color: #fff;
+}
+
+.foot-act-mail {
+  background: #3e5c76;
+  border-color: #3e5c76;
+  color: #fff;
+}
+
+.foot-act-mail:hover {
+  background: #345067;
+  border-color: #345067;
+  color: #fff;
+}
+
+.foot-act-fb {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #fff;
+}
+
+.foot-act-fb:hover {
+  background: #166fe0;
+  border-color: #166fe0;
+  color: #fff;
 }
 
 .foot-act-map {
+  background: #8f4b3c;
+  border-color: #8f4b3c;
+  color: #fff;
   white-space: normal;
   max-width: 18rem;
   line-height: 1.25;
+}
+
+.foot-act-map:hover {
+  background: #7d4134;
+  border-color: #7d4134;
+  color: #fff;
 }
 
 @media (max-width: 700px) {
   .site-foot {
     grid-template-columns: 1fr;
     align-items: start;
-    padding: 1.45rem 6vw 1.3rem;
-    gap: 1.1rem;
+    padding: 1.45rem 6vw 1.4rem;
+    gap: 1.15rem;
   }
 
   .foot-place,
   .foot-actions {
-    justify-content: flex-start;
+    justify-content: stretch;
     position: static;
+    width: 100%;
+  }
+
+  .foot-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .foot-act {
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.75rem;
   }
 
   .foot-act-map {
+    grid-column: 1 / -1;
     max-width: none;
   }
 }
