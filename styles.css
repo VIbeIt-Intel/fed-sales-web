@@ -2362,6 +2362,11 @@ footer {
     min-height: 274px;
   }
 
+  .live-specials-rail {
+    margin-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    margin-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+
   .live-specials-stamp {
     padding-left: max(1rem, calc(env(safe-area-inset-left, 0px) + 0.75rem));
     padding-right: 0.9rem;
