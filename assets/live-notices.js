@@ -95,6 +95,7 @@
       return;
     }
     var sig = noticesSignature(items);
+    if (host && host.getAttribute("data-sig") === sig) return;
     if (!host) {
       host = document.createElement("div");
       host.className = "live-notices";
@@ -103,8 +104,6 @@
       var header = document.querySelector("header.top");
       if (header && header.parentNode) header.parentNode.insertBefore(host, header.nextSibling);
       else document.body.insertBefore(host, document.body.firstChild);
-    } else if (host.getAttribute("data-sig") === sig) {
-      return;
     }
     host.setAttribute("data-sig", sig);
     host.innerHTML = "";
@@ -197,7 +196,9 @@
         });
         if (fresh.length) showPopup(fresh[0]);
       })
-      .catch(function () {});
+      .catch(function () {
+        renderBanner([]);
+      });
   }
 
   tick();

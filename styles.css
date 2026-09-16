@@ -2047,6 +2047,10 @@ footer {
   padding: 0;
 }
 
+.live-notices:empty {
+  min-height: 218px;
+}
+
 .live-specials-rail {
   display: flex;
   align-items: stretch;
@@ -2350,6 +2354,10 @@ footer {
 }
 
 @media (max-width: 700px) {
+  .live-notices:empty {
+    min-height: 162px;
+  }
+
   .live-specials-row > article:has(.live-notice-photos) {
     grid-template-columns: 112px 1fr;
     height: 112px;
