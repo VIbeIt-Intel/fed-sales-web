@@ -312,15 +312,6 @@ nav a:hover {
   letter-spacing: 0.02em;
 }
 
-.hero-brand-name,
-.hero-brand-entity {
-  display: inline;
-}
-
-.hero-brand-entity {
-  white-space: nowrap;
-}
-
 .hero::after {
   content: "";
   position: absolute;
@@ -685,7 +676,7 @@ h2 {
 .fed-split article {
   display: grid;
   grid-template-columns: auto auto auto;
-  align-items: start;
+  align-items: center;
   column-gap: 0.55rem;
   flex: 0 1 auto;
   width: max-content;
@@ -693,7 +684,7 @@ h2 {
   background: #fff;
   border: 0;
   border-right: 2px solid var(--red);
-  padding: 0.4rem 1.35rem 0.4rem 1.15rem;
+  padding: 0.45rem 1.35rem 0.45rem 1.15rem;
   min-width: 0;
 }
 
@@ -703,17 +694,16 @@ h2 {
 }
 
 .fed-icon {
-  width: 3.15rem;
-  height: 3.15rem;
-  margin-top: 0.55rem;
+  width: 3.05rem;
+  height: 3.05rem;
   display: grid;
   place-items: center;
   color: var(--red);
 }
 
 .fed-icon svg {
-  width: 2.9rem;
-  height: 2.9rem;
+  width: 2.8rem;
+  height: 2.8rem;
   display: block;
 }
 
@@ -723,23 +713,23 @@ h2 {
   font-weight: 800;
   font-style: italic;
   font-size: clamp(5.6rem, 7vw, 7.4rem);
-  line-height: 0.74;
+  line-height: 0.78;
   color: var(--red);
   -webkit-text-fill-color: var(--red);
   letter-spacing: -0.045em;
-  transform: translateY(-0.02em);
+  margin-right: 0.18em;
 }
 
 .fed-text {
   width: max-content;
   max-width: 13.4rem;
-  padding-top: 0.42rem;
+  padding-top: 0.08em;
 }
 
 .fed-split h2 {
   display: block;
   max-width: none;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.16rem;
   font-family: Barlow, sans-serif;
   font-weight: 700;
   font-size: clamp(1.38rem, 0.35vw + 1.28rem, 1.58rem);
@@ -1375,8 +1365,8 @@ footer {
 
   .fed-split article {
     grid-template-columns: auto auto minmax(0, 1fr);
-    align-items: start;
-    column-gap: 0.55rem;
+    align-items: center;
+    column-gap: 0.5rem;
     width: auto;
     padding: 0.7rem 0.85rem 0.7rem 0.7rem;
     border-right: 0;
@@ -1390,13 +1380,14 @@ footer {
 
   .fed-letter {
     font-size: 4.6rem;
-    line-height: 0.74;
+    line-height: 0.78;
+    margin-right: 0.16em;
   }
 
   .fed-text {
     width: auto;
     max-width: none;
-    padding-top: 0.28rem;
+    padding-top: 0.06em;
   }
 
   .fed-split h2 {
@@ -1410,7 +1401,6 @@ footer {
   .fed-icon {
     width: 2.7rem;
     height: 2.7rem;
-    margin-top: 0.4rem;
   }
 
   .fed-icon svg {
