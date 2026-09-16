@@ -729,10 +729,10 @@ h2 {
   line-height: 1.35;
 }
 
-.fed-people {
+.fed-split .fed-people {
   margin-top: 0.3rem;
-  color: var(--red);
-  font-size: 0.78rem;
+  color: var(--ink);
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
