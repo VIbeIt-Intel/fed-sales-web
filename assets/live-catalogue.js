@@ -9,6 +9,15 @@
     (slugMatch ? slugMatch[1] : "");
   if (!slug) return;
 
+  var PRICE_FILE_ERA = "September 2026";
+
+  function alignPriceFileStamp(stamp) {
+    if (!stamp) return;
+    if (/^From the current FED price file/.test((stamp.textContent || "").trim())) {
+      stamp.textContent = "From the current FED price file · " + PRICE_FILE_ERA;
+    }
+  }
+
   function addPricelistButtons() {
     var catalog = document.querySelector(".catalog");
     if (!catalog || catalog.querySelector(".catalog-pricelist")) return;
@@ -30,6 +39,7 @@
     else (catalog.querySelector(".catalog-wrap") || catalog).appendChild(actions);
   }
 
+  alignPriceFileStamp(document.querySelector(".catalog-stamp"));
   addPricelistButtons();
 
   fetch(office.replace(/\/$/, "") + "/api/public/catalogue?slug=" + encodeURIComponent(slug))
